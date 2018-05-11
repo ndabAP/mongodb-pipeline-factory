@@ -1,2 +1,2 @@
-export { project } from './stages/stages'
-export { or } from './operators/operators'
+export { project } from './stages/index'
+export { or } from './operators/index'
