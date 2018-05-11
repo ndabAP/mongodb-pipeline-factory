@@ -1,4 +1,4 @@
-type Lt = {$lt: any}
+type Lt = {$lt: Array<any> | number}
 
 /**
  * Example: { $lt: [ "$qty", 250 ] }
@@ -9,7 +9,7 @@ type Lt = {$lt: any}
  */
 export default (expression: Array<any> | number): Lt => {
   if (Array.isArray(expression)) {
-    let lt: Lt = {$lt: []}
+    let lt: any = {$lt: []}
 
     const [key, value] = expression
     lt.$lt.push(key, value)

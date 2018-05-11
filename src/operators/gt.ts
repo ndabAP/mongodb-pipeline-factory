@@ -1,4 +1,4 @@
-type Gt = {$gt: any}
+type Gt = {$gt: Array<any> | number}
 
 /**
  * Example: { $gt: [ "$qty", 250 ] }
@@ -9,7 +9,7 @@ type Gt = {$gt: any}
  */
 export default (expression: Array<any> | number): Gt => {
   if (Array.isArray(expression)) {
-    let gt: Gt = {$gt: []}
+    let gt: any = {$gt: []}
 
     const [key, value] = expression
     gt.$gt.push(key, value)
