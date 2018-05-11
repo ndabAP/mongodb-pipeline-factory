@@ -1,0 +1,31 @@
+const path = require('path')
+
+module.exports = {
+  entry: './src/index.ts',
+  mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
+  target: 'node',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'mongodb-pipeline-factory',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  }
+}
