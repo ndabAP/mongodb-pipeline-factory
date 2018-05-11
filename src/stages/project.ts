@@ -5,14 +5,15 @@ import Dictionary from '../types/Dictionary'
 type Project = { $project: any }
 
 /**
- * Example: db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )
+ * Example: { $project : { title : 1 , author : 1 } }
  *
- * @param {Dictionary} dictionary
+ * @param {Dictionary} expression
+ *
  * @returns {Project}
  */
-export default (dictionary: Dictionary): Project => {
+export default (expression: Dictionary): Project => {
   let pipeline: Project = {$project: {}}
-  each(dictionary, ([field, expression]) => set(pipeline.$project, field, expression))
+  each(expression, ([field, expression]) => set(pipeline.$project, field, expression))
 
   return pipeline
 }

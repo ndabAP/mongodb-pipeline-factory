@@ -1,2 +1,2 @@
-export { project } from './stages/index'
-export { or } from './operators/index'
+export { project, match } from './stages/stages'
+export { or, and, gt, lt } from './operators/operators'
