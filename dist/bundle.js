@@ -1013,91 +1013,7 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.project = stages_1.project;\nexports.match = stages_1.match;\nexports.count = stages_1.count;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.substr = operators_1.substr;\nexports.cond = operators_1.cond;\nexports.and = operators_1.and;\nexports.or = operators_1.or;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/booleanOrBooleanLikeOrExpression.ts":
-/*!********************************************************!*\
-  !*** ./src/mixins/booleanOrBooleanLikeOrExpression.ts ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {BooleanOrBooleanLikeOrExpression} booleanOrBooleanLikeOrExpression\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (booleanOrBooleanLikeOrExpression, identifier) {\n    var pipeline = (_a = {}, _a[identifier] = {}, _a);\n    each(booleanOrBooleanLikeOrExpression, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(pipeline[identifier], field, expression);\n    });\n    return pipeline;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/booleanOrBooleanLikeOrExpression.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts":
-/*!*********************************************************************!*\
-  !*** ./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {ExpressionOrBooleanOrBooleanLikeAnyAnyTriplet} expressionOrBooleanOrBooleanLikeAnyAnyTriplet\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (expressionOrBooleanOrBooleanLikeAnyAnyTriplet, identifier) {\n    return (_a = {}, _a[identifier] = expressionOrBooleanOrBooleanLikeAnyAnyTriplet, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/expressionOrNumber.ts":
-/*!******************************************!*\
-  !*** ./src/mixins/expressionOrNumber.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {ExpressionOrNumber} expressionOrNumber\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (expressionOrNumber, identifier) {\n    if (Array.isArray(expressionOrNumber)) {\n        var pipeline = (_a = {}, _a[identifier] = [], _a);\n        var key = expressionOrNumber[0], value = expressionOrNumber[1];\n        pipeline[identifier].push(key, value);\n        return pipeline;\n    }\n    return _b = {}, _b[identifier] = expressionOrNumber, _b;\n    var _a, _b;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/expressionOrNumber.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/expressions.ts":
-/*!***********************************!*\
-  !*** ./src/mixins/expressions.ts ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\n/**\n * @param {Expressions} expressions\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (expressions, identifier) {\n    var pipeline = (_a = {}, _a[identifier] = [], _a);\n    each(expressions, function (expression) { return pipeline[identifier].push(expression); });\n    return pipeline;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/expressions.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/query.ts":
-/*!*****************************!*\
-  !*** ./src/mixins/query.ts ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Query} query\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (query, identifier) {\n    return (_a = {}, _a[identifier] = query, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/query.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/queryString.ts":
-/*!***********************************!*\
-  !*** ./src/mixins/queryString.ts ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {QueryString} queryString\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (queryString, identifier) {\n    return (_a = {}, _a[identifier] = queryString, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/queryString.ts?");
-
-/***/ }),
-
-/***/ "./src/mixins/stringNumberNumberTriplet.ts":
-/*!*************************************************!*\
-  !*** ./src/mixins/stringNumberNumberTriplet.ts ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {StringNumberNumberTriplet} stringNumberNumberTriplet\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (stringNumberNumberTriplet, identifier) {\n    return _a = {}, _a[identifier] = stringNumberNumberTriplet, _a;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/stringNumberNumberTriplet.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.group = stages_1.group;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.or = operators_1.or;\nexports.gt = operators_1.gt;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
@@ -1109,19 +1025,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressions_1 = __webpack_require__(/*! ../mixins/expressions */ \"./src/mixins/expressions.ts\");\n/**\n * Example: { $and: [ { $gt: [ \"$qty\", 250 ] }, { $lt: [ \"$qty\", 500 ] } ] }\n *\n * @returns {And}\n *\n * @param and\n */\nexports.default = (function (and) { return expressions_1.default(and, '$and'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
-
-/***/ }),
-
-/***/ "./src/operators/cond.ts":
-/*!*******************************!*\
-  !*** ./src/operators/cond.ts ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressionOrBooleanOrBooleanLikeAnyAnyTriplet_1 = __webpack_require__(/*! ../mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet */ \"./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts\");\n/**\n * Example: { $cond: { if: { $gte: [ \"$qty\", 250 ] }, then: 30, else: 20 } }\n *\n * @param {ExpressionOrBooleanOrBooleanLikeAnyAnyTriplet} cond\n *\n * @returns {Cond}\n */\nexports.default = (function (cond) {\n    return expressionOrBooleanOrBooleanLikeAnyAnyTriplet_1.default(cond, '$cond');\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/cond.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any>} expressions\n *\n * @returns {{$and: Array<any>}}\n */\nvar fn = function (expressions) { return ({ $and: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
 
 /***/ }),
 
@@ -1133,19 +1037,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressionOrNumber_1 = __webpack_require__(/*! ./../mixins/expressionOrNumber */ \"./src/mixins/expressionOrNumber.ts\");\n/**\n * Example: { $gt: [ \"$qty\", 250 ] }\n *\n * @returns {Gt}\n *\n * @param gt\n */\nexports.default = (function (gt) { return expressionOrNumber_1.default(gt, '$gt'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
-
-/***/ }),
-
-/***/ "./src/operators/lt.ts":
-/*!*****************************!*\
-  !*** ./src/operators/lt.ts ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressionOrNumber_1 = __webpack_require__(/*! ./../mixins/expressionOrNumber */ \"./src/mixins/expressionOrNumber.ts\");\n/**\n * Example: { $lt: [ \"$qty\", 250 ] }\n *\n * @returns {Lt}\n *\n * @param lt\n */\nexports.default = (function (lt) { return expressionOrNumber_1.default(lt, '$lt'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/lt.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {number | Array<any>} expressions\n *\n * @returns {{$gt: number | Array<any>}}\n */\nvar fn = function (expressions) { return ({ $gt: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
 
 /***/ }),
 
@@ -1157,7 +1049,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar substr_1 = __webpack_require__(/*! ./substr */ \"./src/operators/substr.ts\");\nexports.substr = substr_1.default;\nvar cond_1 = __webpack_require__(/*! ./cond */ \"./src/operators/cond.ts\");\nexports.cond = cond_1.default;\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar sum_1 = __webpack_require__(/*! ./sum */ \"./src/operators/sum.ts\");\nexports.sum = sum_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
 
 /***/ }),
 
@@ -1169,55 +1061,31 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar su
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressions_1 = __webpack_require__(/*! ../mixins/expressions */ \"./src/mixins/expressions.ts\");\n/**\n * Example: { $or: [ { $gt: [ \"$qty\", 250 ] }, { $lt: [ \"$qty\", 500 ] } ] }\n *\n * @returns {Or}\n *\n * @param or\n */\nexports.default = (function (or) { return expressions_1.default(or, '$or'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any>} expressions\n *\n * @returns {{$or: Array<any>}}\n */\nvar fn = function (expressions) { return ({ $or: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
 
 /***/ }),
 
-/***/ "./src/operators/substr.ts":
-/*!*********************************!*\
-  !*** ./src/operators/substr.ts ***!
-  \*********************************/
+/***/ "./src/operators/sum.ts":
+/*!******************************!*\
+  !*** ./src/operators/sum.ts ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stringNumberNumberTriplet_1 = __webpack_require__(/*! ../mixins/stringNumberNumberTriplet */ \"./src/mixins/stringNumberNumberTriplet.ts\");\n/**\n * Example: { $substr: [ \"$quarter\", 0, 2 ] }\n *\n * @param {AnyTriplet} substr\n *\n * @returns {any}\n */\nexports.default = (function (substr) { return stringNumberNumberTriplet_1.default(substr, '$substr'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/substr.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {number | string | Array<any>} expressions\n *\n * @returns {{$sum: number | string | Array<any>}}\n */\nvar fn = function (expressions) { return ({ $sum: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/sum.ts?");
 
 /***/ }),
 
-/***/ "./src/stages/count.ts":
+/***/ "./src/stages/group.ts":
 /*!*****************************!*\
-  !*** ./src/stages/count.ts ***!
+  !*** ./src/stages/group.ts ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar queryString_1 = __webpack_require__(/*! ./../mixins/queryString */ \"./src/mixins/queryString.ts\");\n/**\n * Example: { $count: 'score' }\n *\n * @param {QueryString} count\n *\n * @returns {Count}\n */\nexports.default = (function (count) { return queryString_1.default(count, '$count'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/count.ts?");
-
-/***/ }),
-
-/***/ "./src/stages/match.ts":
-/*!*****************************!*\
-  !*** ./src/stages/match.ts ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar query_1 = __webpack_require__(/*! ../mixins/query */ \"./src/mixins/query.ts\");\n/**\n * Example: { $match : { author : \"dave\" } }\n *\n * @returns {Match}\n *\n * @param match\n */\nexports.default = (function (match) { return query_1.default(match, '$match'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/match.ts?");
-
-/***/ }),
-
-/***/ "./src/stages/project.ts":
-/*!*******************************!*\
-  !*** ./src/stages/project.ts ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar booleanOrBooleanLikeOrExpression_1 = __webpack_require__(/*! ../mixins/booleanOrBooleanLikeOrExpression */ \"./src/mixins/booleanOrBooleanLikeOrExpression.ts\");\n/**\n * @param {BooleanOrBooleanLikeOrExpression} project\n *\n * @returns {Project}\n */\nexports.default = (function (project) {\n    return booleanOrBooleanLikeOrExpression_1.default(project, '$project');\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/project.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param _id\n * @param {Array<[any]>} fields\n *\n * @returns {any}\n */\nvar fn = function (_id, fields) {\n    var group = { $group: { _id: _id } };\n    each(fields, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(group.$group, field, expression);\n    });\n    return group;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/group.ts?");
 
 /***/ }),
 
@@ -1229,7 +1097,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar bo
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar project_1 = __webpack_require__(/*! ./project */ \"./src/stages/project.ts\");\nexports.project = project_1.default;\nvar match_1 = __webpack_require__(/*! ./match */ \"./src/stages/match.ts\");\nexports.match = match_1.default;\nvar count_1 = __webpack_require__(/*! ./count */ \"./src/stages/count.ts\");\nexports.count = count_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar group_1 = __webpack_require__(/*! ./group */ \"./src/stages/group.ts\");\nexports.group = group_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
 
 /***/ })
 

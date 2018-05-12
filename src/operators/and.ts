@@ -1,13 +1,10 @@
-import Expressions from '../types/Expressions'
-import expressions from '../mixins/expressions'
-
-type And = { $and: Expressions }
+import { And } from '../../types/operators'
 
 /**
- * Example: { $and: [ { $gt: [ "$qty", 250 ] }, { $lt: [ "$qty", 500 ] } ] }
+ * @param {Array<any>} expressions
  *
- * @returns {And}
- *
- * @param and
+ * @returns {{$and: Array<any>}}
  */
-export default (and: Expressions): And => expressions(and, '$and')
+const fn: And = (expressions: Array<any>) => ({$and: expressions})
+
+export default fn

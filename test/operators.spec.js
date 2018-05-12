@@ -1,34 +1,47 @@
 import { assert } from 'chai'
-import { substr, cond, size, and, or, gt, lt } from './../src/index'
+import { and, or, gt, sum } from './../src/index'
 
 describe('Operators', () => {
-  describe('Substr', () => {
-    it('should return substr', () => assert.deepEqual(substr(['$date', 0, 7]), {$substr: ['$date', 0, 7]}))
-  })
-
-  describe('Cond', () => {
-    it('should return substr', () => assert.deepEqual(cond([true, 'Yes', 'No']), {$cond: [true, 'Yes', 'No']}))
-  })
-
   describe('And', () => {
-    it('should return and', () => assert.deepEqual(and([true, false, false]), {$and: [true, false, false]}))
-  })
-
-  describe('Size', () => {
-    it('should return size', () => assert.deepEqual(size('$colors'), {$size: '$colors'}))
+    it('should return and array', () => assert.deepEqual(
+      and([true, true, {}]),
+      {$and: [true, true, {}]})
+    )
   })
 
   describe('Or', () => {
-    it('should return or', () => assert.deepEqual(or([true, false, false]), {$or: [true, false, false]}))
+    it('should return or array', () => assert.deepEqual(
+      or([true, true, {}]),
+      {$or: [true, true, {}]}
+    ))
   })
 
   describe('Gt', () => {
-    it('should return gt array', () => assert.deepEqual(gt(['price', 500]), {$gt: ['price', 500]}))
-    it('should return gt', () => assert.deepEqual(gt(500), {$gt: 500}))
+    it('should return gt array', () => assert.deepEqual(
+      gt(['quantity', 250]),
+      {$gt: ['quantity', 250]}
+    ))
+
+    it('should return gt number', () => assert.deepEqual(
+      gt(250),
+      {$gt: 250}
+    ))
   })
 
-  describe('Lt', () => {
-    it('should return lt array', () => assert.deepEqual(lt(['price', 500]), {$lt: ['price', 500]}))
-    it('should return lt', () => assert.deepEqual(lt(500), {$lt: 500}))
+  describe('Sum', () => {
+    it('should return sum string', () => assert.deepEqual(
+      sum('$score'),
+      {$sum: '$score'}
+    ))
+
+    it('should return sum array', () => assert.deepEqual(
+      sum(['$score', '$points']),
+      {$sum: ['$score', '$points']}
+    ))
+
+    it('should return sum number', () => assert.deepEqual(
+      sum(1),
+      {$sum: 1}
+    ))
   })
 })

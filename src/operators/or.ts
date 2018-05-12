@@ -1,13 +1,10 @@
-import Expressions from '../types/Expressions'
-import expressions from '../mixins/expressions'
-
-type Or = { $or: Expressions }
+import { Or } from '../../types/operators'
 
 /**
- * Example: { $or: [ { $gt: [ "$qty", 250 ] }, { $lt: [ "$qty", 500 ] } ] }
+ * @param {Array<any>} expressions
  *
- * @returns {Or}
- *
- * @param or
+ * @returns {{$or: Array<any>}}
  */
-export default (or: Expressions): Or => expressions(or, '$or')
+const fn: Or = (expressions: Array<any>) => ({$or: expressions})
+
+export default fn

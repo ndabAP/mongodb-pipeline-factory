@@ -1,13 +1,10 @@
-import expressionOrNumber from './../mixins/expressionOrNumber'
-import ExpressionOrNumber from './../types/ExpressionOrNumber'
-
-type Gt = {$gt: ExpressionOrNumber}
+import {Gt} from '../../types/operators'
 
 /**
- * Example: { $gt: [ "$qty", 250 ] }
+ * @param {number | Array<any>} expressions
  *
- * @returns {Gt}
- *
- * @param gt
+ * @returns {{$gt: number | Array<any>}}
  */
-export default (gt: ExpressionOrNumber): Gt => expressionOrNumber(gt, '$gt')
+const fn: Gt = (expressions: number | Array<any>) => ({$gt: expressions})
+
+export default fn
