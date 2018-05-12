@@ -1,5 +1,5 @@
 {
-  "name": "mongodb-aggregation-pipeline-generators",
+  "name": "mongodb-pipeline-factory",
   "version": "0.0.1",
   "description": "",
   "main": "dist/bundle.js",
