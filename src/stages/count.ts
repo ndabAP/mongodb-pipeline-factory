@@ -4,6 +4,8 @@ import queryString from './../mixins/queryString'
 type Count = { $count: string }
 
 /**
+ * Example: { $count: 'score' }
+ *
  * @param {QueryString} count
  *
  * @returns {Count}
