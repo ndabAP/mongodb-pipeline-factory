@@ -13,12 +13,7 @@ describe('Stages', () => {
           identifier: substr(['$author', 0, 3])
         }]]),
         {
-          '$project': {
-            title: 1,
-            author: {
-              identifier: {$substr: ['$author', 0, 3]}
-            }
-          }
+          '$project': {title: 1, author: {identifier: {$substr: ['$author', 0, 3]}}}
         }
       )
     })

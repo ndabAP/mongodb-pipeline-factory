@@ -1,2 +1,2 @@
 export { project, match, count } from './stages/stages'
-export { substr, cond, and, or, gt, lt } from './operators/operators'
+export { substr, cond, size, and, or, gt, lt } from './operators/operators'

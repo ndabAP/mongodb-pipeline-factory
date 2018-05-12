@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { substr, cond, and, or, gt, lt } from './../src/index'
+import { substr, cond, size, and, or, gt, lt } from './../src/index'
 
 describe('Operators', () => {
   describe('Substr', () => {
@@ -12,6 +12,10 @@ describe('Operators', () => {
 
   describe('And', () => {
     it('should return and', () => assert.deepEqual(and([true, false, false]), {$and: [true, false, false]}))
+  })
+
+  describe('Size', () => {
+    it('should return size', () => assert.deepEqual(size('$colors'), {$size: '$colors'}))
   })
 
   describe('Or', () => {

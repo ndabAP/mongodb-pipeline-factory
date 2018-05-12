@@ -1,3 +1,3 @@
-type Expression = Array<any>
+type Expression = Array<any> | string | number | Date
 
 export default Expression
