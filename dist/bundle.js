@@ -1013,7 +1013,7 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.project = stages_1.project;\nexports.match = stages_1.match;\nexports.count = stages_1.count;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.or = operators_1.or;\nexports.and = operators_1.and;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.project = stages_1.project;\nexports.match = stages_1.match;\nexports.count = stages_1.count;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.substr = operators_1.substr;\nexports.and = operators_1.and;\nexports.or = operators_1.or;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
@@ -1077,6 +1077,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 
 /***/ }),
 
+/***/ "./src/mixins/triplet.ts":
+/*!*******************************!*\
+  !*** ./src/mixins/triplet.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Triplet} triplet\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (triplet, identifier) {\n    return (_a = {}, _a[identifier] = triplet, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/triplet.ts?");
+
+/***/ }),
+
 /***/ "./src/operators/and.ts":
 /*!******************************!*\
   !*** ./src/operators/and.ts ***!
@@ -1121,7 +1133,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar substr_1 = __webpack_require__(/*! ./substr */ \"./src/operators/substr.ts\");\nexports.substr = substr_1.default;\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
 
 /***/ }),
 
@@ -1137,6 +1149,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 
 /***/ }),
 
+/***/ "./src/operators/substr.ts":
+/*!*********************************!*\
+  !*** ./src/operators/substr.ts ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar triplet_1 = __webpack_require__(/*! ./../mixins/triplet */ \"./src/mixins/triplet.ts\");\n/**\n * Example: { $substr: [ \"$quarter\", 0, 2 ] }\n *\n * @param {Triplet} substr\n *\n * @returns {any}\n */\nexports.default = (function (substr) { return triplet_1.default(substr, '$substr'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/substr.ts?");
+
+/***/ }),
+
 /***/ "./src/stages/count.ts":
 /*!*****************************!*\
   !*** ./src/stages/count.ts ***!
@@ -1145,7 +1169,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar queryString_1 = __webpack_require__(/*! ./../mixins/queryString */ \"./src/mixins/queryString.ts\");\n/**\n * @param {QueryString} count\n *\n * @returns {Count}\n */\nexports.default = (function (count) { return queryString_1.default(count, '$count'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/count.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar queryString_1 = __webpack_require__(/*! ./../mixins/queryString */ \"./src/mixins/queryString.ts\");\n/**\n * Example: { $count: 'score' }\n *\n * @param {QueryString} count\n *\n * @returns {Count}\n */\nexports.default = (function (count) { return queryString_1.default(count, '$count'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/count.ts?");
 
 /***/ }),
 
