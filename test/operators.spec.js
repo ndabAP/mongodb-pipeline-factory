@@ -1,9 +1,13 @@
 import { assert } from 'chai'
-import { substr, and, or, gt, lt } from './../src/index'
+import { substr, cond, and, or, gt, lt } from './../src/index'
 
 describe('Operators', () => {
   describe('Substr', () => {
     it('should return substr', () => assert.deepEqual(substr(['$date', 0, 7]), {$substr: ['$date', 0, 7]}))
+  })
+
+  describe('Cond', () => {
+    it('should return substr', () => assert.deepEqual(cond([true, 'Yes', 'No']), {$cond: [true, 'Yes', 'No']}))
   })
 
   describe('And', () => {

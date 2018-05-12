@@ -1,13 +1,13 @@
-import Triplet from './../types/Triplet'
-import triplet from './../mixins/triplet'
+import StringNumberNumberTriplet from '../types/StringNumberNumberTriplet'
+import stringNumberNumberTriplet from '../mixins/stringNumberNumberTriplet'
 
-type Substr = {$substr: Triplet}
+type Substr = {$substr: StringNumberNumberTriplet}
 
 /**
  * Example: { $substr: [ "$quarter", 0, 2 ] }
  *
- * @param {Triplet} substr
+ * @param {AnyTriplet} substr
  *
  * @returns {any}
  */
-export default (substr: Triplet): Substr => triplet(substr, '$substr')
+export default (substr: StringNumberNumberTriplet): Substr => stringNumberNumberTriplet(substr, '$substr')

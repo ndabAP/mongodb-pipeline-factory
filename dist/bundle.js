@@ -1013,7 +1013,7 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.project = stages_1.project;\nexports.match = stages_1.match;\nexports.count = stages_1.count;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.substr = operators_1.substr;\nexports.and = operators_1.and;\nexports.or = operators_1.or;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.project = stages_1.project;\nexports.match = stages_1.match;\nexports.count = stages_1.count;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.substr = operators_1.substr;\nexports.cond = operators_1.cond;\nexports.and = operators_1.and;\nexports.or = operators_1.or;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
@@ -1026,6 +1026,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar st
 
 "use strict";
 eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {BooleanOrBooleanLikeOrExpression} booleanOrBooleanLikeOrExpression\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (booleanOrBooleanLikeOrExpression, identifier) {\n    var pipeline = (_a = {}, _a[identifier] = {}, _a);\n    each(booleanOrBooleanLikeOrExpression, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(pipeline[identifier], field, expression);\n    });\n    return pipeline;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/booleanOrBooleanLikeOrExpression.ts?");
+
+/***/ }),
+
+/***/ "./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts":
+/*!*********************************************************************!*\
+  !*** ./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {ExpressionOrBooleanOrBooleanLikeAnyAnyTriplet} expressionOrBooleanOrBooleanLikeAnyAnyTriplet\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (expressionOrBooleanOrBooleanLikeAnyAnyTriplet, identifier) {\n    return (_a = {}, _a[identifier] = expressionOrBooleanOrBooleanLikeAnyAnyTriplet, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts?");
 
 /***/ }),
 
@@ -1077,15 +1089,15 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 
 /***/ }),
 
-/***/ "./src/mixins/triplet.ts":
-/*!*******************************!*\
-  !*** ./src/mixins/triplet.ts ***!
-  \*******************************/
+/***/ "./src/mixins/stringNumberNumberTriplet.ts":
+/*!*************************************************!*\
+  !*** ./src/mixins/stringNumberNumberTriplet.ts ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Triplet} triplet\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (triplet, identifier) {\n    return (_a = {}, _a[identifier] = triplet, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/triplet.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {StringNumberNumberTriplet} stringNumberNumberTriplet\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (stringNumberNumberTriplet, identifier) {\n    return _a = {}, _a[identifier] = stringNumberNumberTriplet, _a;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/stringNumberNumberTriplet.ts?");
 
 /***/ }),
 
@@ -1098,6 +1110,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 
 "use strict";
 eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressions_1 = __webpack_require__(/*! ../mixins/expressions */ \"./src/mixins/expressions.ts\");\n/**\n * Example: { $and: [ { $gt: [ \"$qty\", 250 ] }, { $lt: [ \"$qty\", 500 ] } ] }\n *\n * @returns {And}\n *\n * @param and\n */\nexports.default = (function (and) { return expressions_1.default(and, '$and'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
+
+/***/ }),
+
+/***/ "./src/operators/cond.ts":
+/*!*******************************!*\
+  !*** ./src/operators/cond.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressionOrBooleanOrBooleanLikeAnyAnyTriplet_1 = __webpack_require__(/*! ../mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet */ \"./src/mixins/expressionOrBooleanOrBooleanLikeAnyAnyTriplet.ts\");\n/**\n * Example: { $cond: { if: { $gte: [ \"$qty\", 250 ] }, then: 30, else: 20 } }\n *\n * @param {ExpressionOrBooleanOrBooleanLikeAnyAnyTriplet} cond\n *\n * @returns {Cond}\n */\nexports.default = (function (cond) {\n    return expressionOrBooleanOrBooleanLikeAnyAnyTriplet_1.default(cond, '$cond');\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/cond.ts?");
 
 /***/ }),
 
@@ -1133,7 +1157,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar substr_1 = __webpack_require__(/*! ./substr */ \"./src/operators/substr.ts\");\nexports.substr = substr_1.default;\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar substr_1 = __webpack_require__(/*! ./substr */ \"./src/operators/substr.ts\");\nexports.substr = substr_1.default;\nvar cond_1 = __webpack_require__(/*! ./cond */ \"./src/operators/cond.ts\");\nexports.cond = cond_1.default;\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
 
 /***/ }),
 
@@ -1157,7 +1181,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar triplet_1 = __webpack_require__(/*! ./../mixins/triplet */ \"./src/mixins/triplet.ts\");\n/**\n * Example: { $substr: [ \"$quarter\", 0, 2 ] }\n *\n * @param {Triplet} substr\n *\n * @returns {any}\n */\nexports.default = (function (substr) { return triplet_1.default(substr, '$substr'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/substr.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stringNumberNumberTriplet_1 = __webpack_require__(/*! ../mixins/stringNumberNumberTriplet */ \"./src/mixins/stringNumberNumberTriplet.ts\");\n/**\n * Example: { $substr: [ \"$quarter\", 0, 2 ] }\n *\n * @param {AnyTriplet} substr\n *\n * @returns {any}\n */\nexports.default = (function (substr) { return stringNumberNumberTriplet_1.default(substr, '$substr'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/substr.ts?");
 
 /***/ }),
 
