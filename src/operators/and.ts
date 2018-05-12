@@ -1,18 +1,13 @@
-import each = require('lodash/each')
-import List from '../types/List'
+import Expressions from '../types/Expressions'
+import expressions from '../mixins/expressions'
 
-type And = { $and: List }
+type And = { $and: Expressions }
 
 /**
  * Example: { $and: [ { $gt: [ "$qty", 250 ] }, { $lt: [ "$qty", 500 ] } ] }
  *
- * @param {List} list
- *
  * @returns {And}
+ *
+ * @param and
  */
-export default (list: List): And => {
-  let pipeline: And = {$and: []}
-  each(list, item => pipeline.$and.push(item))
-
-  return pipeline
-}
+export default (and: Expressions): And => expressions(and, '$and')

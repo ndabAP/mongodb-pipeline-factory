@@ -1013,19 +1013,115 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar index_1 = __webpack_require__(/*! ./stages/index */ \"./src/stages/index.ts\");\nexports.project = index_1.project;\nvar index_2 = __webpack_require__(/*! ./operators/index */ \"./src/operators/index.ts\");\nexports.or = index_2.or;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.project = stages_1.project;\nexports.match = stages_1.match;\nexports.count = stages_1.count;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.or = operators_1.or;\nexports.and = operators_1.and;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
-/***/ "./src/operators/index.ts":
-/*!********************************!*\
-  !*** ./src/operators/index.ts ***!
-  \********************************/
+/***/ "./src/mixins/booleanOrBooleanLikeOrExpression.ts":
+/*!********************************************************!*\
+  !*** ./src/mixins/booleanOrBooleanLikeOrExpression.ts ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {BooleanOrBooleanLikeOrExpression} booleanOrBooleanLikeOrExpression\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (booleanOrBooleanLikeOrExpression, identifier) {\n    var pipeline = (_a = {}, _a[identifier] = {}, _a);\n    each(booleanOrBooleanLikeOrExpression, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(pipeline[identifier], field, expression);\n    });\n    return pipeline;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/booleanOrBooleanLikeOrExpression.ts?");
+
+/***/ }),
+
+/***/ "./src/mixins/expressionOrNumber.ts":
+/*!******************************************!*\
+  !*** ./src/mixins/expressionOrNumber.ts ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {ExpressionOrNumber} expressionOrNumber\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (expressionOrNumber, identifier) {\n    if (Array.isArray(expressionOrNumber)) {\n        var pipeline = (_a = {}, _a[identifier] = [], _a);\n        var key = expressionOrNumber[0], value = expressionOrNumber[1];\n        pipeline[identifier].push(key, value);\n        return pipeline;\n    }\n    return _b = {}, _b[identifier] = expressionOrNumber, _b;\n    var _a, _b;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/expressionOrNumber.ts?");
+
+/***/ }),
+
+/***/ "./src/mixins/expressions.ts":
+/*!***********************************!*\
+  !*** ./src/mixins/expressions.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\n/**\n * @param {Expressions} expressions\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (expressions, identifier) {\n    var pipeline = (_a = {}, _a[identifier] = [], _a);\n    each(expressions, function (expression) { return pipeline[identifier].push(expression); });\n    return pipeline;\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/expressions.ts?");
+
+/***/ }),
+
+/***/ "./src/mixins/query.ts":
+/*!*****************************!*\
+  !*** ./src/mixins/query.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Query} query\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (query, identifier) {\n    return (_a = {}, _a[identifier] = query, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/query.ts?");
+
+/***/ }),
+
+/***/ "./src/mixins/queryString.ts":
+/*!***********************************!*\
+  !*** ./src/mixins/queryString.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {QueryString} queryString\n * @param {string} identifier\n *\n * @returns {any}\n */\nexports.default = (function (queryString, identifier) {\n    return (_a = {}, _a[identifier] = queryString, _a);\n    var _a;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/mixins/queryString.ts?");
+
+/***/ }),
+
+/***/ "./src/operators/and.ts":
+/*!******************************!*\
+  !*** ./src/operators/and.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressions_1 = __webpack_require__(/*! ../mixins/expressions */ \"./src/mixins/expressions.ts\");\n/**\n * Example: { $and: [ { $gt: [ \"$qty\", 250 ] }, { $lt: [ \"$qty\", 500 ] } ] }\n *\n * @returns {And}\n *\n * @param and\n */\nexports.default = (function (and) { return expressions_1.default(and, '$and'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
+
+/***/ }),
+
+/***/ "./src/operators/gt.ts":
+/*!*****************************!*\
+  !*** ./src/operators/gt.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressionOrNumber_1 = __webpack_require__(/*! ./../mixins/expressionOrNumber */ \"./src/mixins/expressionOrNumber.ts\");\n/**\n * Example: { $gt: [ \"$qty\", 250 ] }\n *\n * @returns {Gt}\n *\n * @param gt\n */\nexports.default = (function (gt) { return expressionOrNumber_1.default(gt, '$gt'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
+
+/***/ }),
+
+/***/ "./src/operators/lt.ts":
+/*!*****************************!*\
+  !*** ./src/operators/lt.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressionOrNumber_1 = __webpack_require__(/*! ./../mixins/expressionOrNumber */ \"./src/mixins/expressionOrNumber.ts\");\n/**\n * Example: { $lt: [ \"$qty\", 250 ] }\n *\n * @returns {Lt}\n *\n * @param lt\n */\nexports.default = (function (lt) { return expressionOrNumber_1.default(lt, '$lt'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/lt.ts?");
+
+/***/ }),
+
+/***/ "./src/operators/operators.ts":
+/*!************************************!*\
+  !*** ./src/operators/operators.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
 
 /***/ }),
 
@@ -1037,19 +1133,19 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar or
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\n/**\n * Example: { $or: [ { $gt: [ \"$qty\", 250 ] }, { $lt: [ \"$qty\", 200 ] } ] }\n *\n * @param {List} list\n *\n * @returns {Or}\n */\nexports.default = (function (list) {\n    var pipeline = { $or: [] };\n    each(list, function (item) { return pipeline.$or.push(item); });\n    return pipeline;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar expressions_1 = __webpack_require__(/*! ../mixins/expressions */ \"./src/mixins/expressions.ts\");\n/**\n * Example: { $or: [ { $gt: [ \"$qty\", 250 ] }, { $lt: [ \"$qty\", 500 ] } ] }\n *\n * @returns {Or}\n *\n * @param or\n */\nexports.default = (function (or) { return expressions_1.default(or, '$or'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
 
 /***/ }),
 
-/***/ "./src/stages/index.ts":
+/***/ "./src/stages/count.ts":
 /*!*****************************!*\
-  !*** ./src/stages/index.ts ***!
+  !*** ./src/stages/count.ts ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar project_1 = __webpack_require__(/*! ./project */ \"./src/stages/project.ts\");\nexports.project = project_1.default;\nvar match_1 = __webpack_require__(/*! ./match */ \"./src/stages/match.ts\");\nexports.match = match_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar queryString_1 = __webpack_require__(/*! ./../mixins/queryString */ \"./src/mixins/queryString.ts\");\n/**\n * @param {QueryString} count\n *\n * @returns {Count}\n */\nexports.default = (function (count) { return queryString_1.default(count, '$count'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/count.ts?");
 
 /***/ }),
 
@@ -1061,7 +1157,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar pr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * Example: { $match : { author : \"dave\" } }\n *\n * @param {Query} query\n *\n * @returns {Match}\n */\nexports.default = (function (query) {\n    return { $match: query };\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/match.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar query_1 = __webpack_require__(/*! ../mixins/query */ \"./src/mixins/query.ts\");\n/**\n * Example: { $match : { author : \"dave\" } }\n *\n * @returns {Match}\n *\n * @param match\n */\nexports.default = (function (match) { return query_1.default(match, '$match'); });\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/match.ts?");
 
 /***/ }),
 
@@ -1073,7 +1169,19 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * Example: { $project : { title : 1 , author : 1 } }\n *\n * @param {Dictionary} expression\n *\n * @returns {Project}\n */\nexports.default = (function (expression) {\n    var pipeline = { $project: {} };\n    each(expression, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(pipeline.$project, field, expression);\n    });\n    return pipeline;\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/project.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar booleanOrBooleanLikeOrExpression_1 = __webpack_require__(/*! ../mixins/booleanOrBooleanLikeOrExpression */ \"./src/mixins/booleanOrBooleanLikeOrExpression.ts\");\n/**\n * @param {BooleanOrBooleanLikeOrExpression} project\n *\n * @returns {Project}\n */\nexports.default = (function (project) {\n    return booleanOrBooleanLikeOrExpression_1.default(project, '$project');\n});\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/project.ts?");
+
+/***/ }),
+
+/***/ "./src/stages/stages.ts":
+/*!******************************!*\
+  !*** ./src/stages/stages.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar project_1 = __webpack_require__(/*! ./project */ \"./src/stages/project.ts\");\nexports.project = project_1.default;\nvar match_1 = __webpack_require__(/*! ./match */ \"./src/stages/match.ts\");\nexports.match = match_1.default;\nvar count_1 = __webpack_require__(/*! ./count */ \"./src/stages/count.ts\");\nexports.count = count_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
 
 /***/ })
 

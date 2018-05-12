@@ -1,19 +1,13 @@
-import each = require('lodash/each')
-import set = require('lodash/set')
-import Dictionary from '../types/Dictionary'
+import booleanOrBooleanLikeOrExpression from '../mixins/booleanOrBooleanLikeOrExpression'
+import BooleanOrBooleanLikeOrExpression from '../types/BooleanOrBooleanLikeOrExpression'
 
 type Project = { $project: any }
 
 /**
- * Example: { $project : { title : 1 , author : 1 } }
- *
- * @param {Dictionary} expression
+ * @param {BooleanOrBooleanLikeOrExpression} project
  *
  * @returns {Project}
  */
-export default (expression: Dictionary): Project => {
-  let pipeline: Project = {$project: {}}
-  each(expression, ([field, expression]) => set(pipeline.$project, field, expression))
-
-  return pipeline
+export default (project: BooleanOrBooleanLikeOrExpression): Project => {
+  return booleanOrBooleanLikeOrExpression(project, '$project')
 }

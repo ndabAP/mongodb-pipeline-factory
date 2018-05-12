@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { or, and, gt } from './../src/index'
+import { or, and, gt, lt } from './../src/index'
 
 describe('Operators', () => {
   describe('Or', () => {
@@ -21,6 +21,16 @@ describe('Operators', () => {
 
     it('should return gt', () => {
       assert.deepEqual(gt(500), {$gt: 500})
+    })
+  })
+
+  describe('Lt', () => {
+    it('should return lt array', () => {
+      assert.deepEqual(lt(['price', 500]), {$lt: ['price', 500]})
+    })
+
+    it('should return lt', () => {
+      assert.deepEqual(lt(500), {$lt: 500})
     })
   })
 })

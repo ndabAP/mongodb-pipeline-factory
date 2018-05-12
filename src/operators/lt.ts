@@ -1,21 +1,13 @@
-type Lt = {$lt: Array<any> | number}
+import expressionOrNumber from './../mixins/expressionOrNumber'
+import ExpressionOrNumber from './../types/ExpressionOrNumber'
+
+type Lt = {$tt: ExpressionOrNumber}
 
 /**
  * Example: { $lt: [ "$qty", 250 ] }
  *
- * @param {Array<any> | number} expression
- *
  * @returns {Lt}
+ *
+ * @param lt
  */
-export default (expression: Array<any> | number): Lt => {
-  if (Array.isArray(expression)) {
-    let lt: any = {$lt: []}
-
-    const [key, value] = expression
-    lt.$lt.push(key, value)
-
-    return lt
-  } else {
-    return {$lt: expression}
-  }
-}
+export default (lt: ExpressionOrNumber): Lt => expressionOrNumber(lt, '$lt')

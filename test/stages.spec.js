@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { project, match } from './../src/index'
+import { project, match, count } from './../src/index'
 
 describe('Stages', () => {
   describe('project', () => {
@@ -11,6 +11,16 @@ describe('Stages', () => {
   describe('match', () => {
     it('should return match', () => {
       assert.deepEqual(match({author: 'dave'}), {$match: {author: 'dave'}})
+    })
+
+    it('should return multiple match', () => {
+      assert.deepEqual(match({author: 'dave', 'books': 5}), {$match: {author: 'dave', books: 5}})
+    })
+  })
+
+  describe('count', () => {
+    it('should return count', () => {
+      assert.deepEqual(count('scores'), {$count: 'scores'})
     })
   })
 })

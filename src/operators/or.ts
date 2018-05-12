@@ -1,18 +1,13 @@
-import each = require('lodash/each')
-import List from '../types/List'
+import Expressions from '../types/Expressions'
+import expressions from '../mixins/expressions'
 
-type Or = { $or: List }
+type Or = { $or: Expressions }
 
 /**
- * Example: { $or: [ { $gt: [ "$qty", 250 ] }, { $lt: [ "$qty", 200 ] } ] }
- *
- * @param {List} list
+ * Example: { $or: [ { $gt: [ "$qty", 250 ] }, { $lt: [ "$qty", 500 ] } ] }
  *
  * @returns {Or}
+ *
+ * @param or
  */
-export default (list: List): Or => {
-  let pipeline: Or = {$or: []}
-  each(list, item => pipeline.$or.push(item))
-
-  return pipeline
-}
+export default (or: Expressions): Or => expressions(or, '$or')

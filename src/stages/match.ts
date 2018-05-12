@@ -1,3 +1,4 @@
+import query from '../mixins/query'
 import Query from '../types/Query'
 
 type Match = { $match: any }
@@ -5,10 +6,8 @@ type Match = { $match: any }
 /**
  * Example: { $match : { author : "dave" } }
  *
- * @param {Query} query
- *
  * @returns {Match}
+ *
+ * @param match
  */
-export default (query: Query): Match => {
-  return {$match: query}
-}
+export default (match: Query): Match => query(match, '$match')
