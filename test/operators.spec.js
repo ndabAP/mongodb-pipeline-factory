@@ -64,6 +64,11 @@ describe('Operators', () => {
       not([true]),
       {$not: [true]}
     ))
+
+    it('should return object', () => assert.deepEqual(
+      not({}),
+      {$not: {}}
+    ))
   })
 
   describe('Or', () => {
