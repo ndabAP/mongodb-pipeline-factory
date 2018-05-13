@@ -1,7 +1,13 @@
 {
   "name": "mongodb-pipeline-factory",
-  "version": "0.4.1",
-  "description": "",
+  "version": "0.4.2",
+  "description": "Generate MongoDB pipelines with ease.",
+  "keywords": [
+    "mongodb",
+    "pipelines",
+    "node",
+    "mongoose"
+  ],
   "main": "dist/bundle.js",
   "scripts": {
     "dev": "webpack --progress --colors --watch --env dev",
