@@ -1,6 +1,6 @@
 # mongodb-pipeline-factory
 
-Generate MongoDB pipelines with ease.
+Generate MongoDB pipelines with ease. Save dozens of keystrokes.
 
 ## Features
 
