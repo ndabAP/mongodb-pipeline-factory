@@ -23,7 +23,7 @@ interface Map {
 }
 
 interface Not {
-  (expressions: Array<any>): { $not: any }
+  (expressions: any): { $not: any }
 }
 
 interface Or {
