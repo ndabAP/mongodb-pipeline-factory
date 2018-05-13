@@ -1,2 +1,2 @@
-export { group, match, project } from './stages/stages'
+export { group, match, project, sample, sort, unwind } from './stages/stages'
 export { and, cond, eq, filter, map, not, gt, or, size, sum } from './operators/operators'

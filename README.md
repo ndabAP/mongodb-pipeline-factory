@@ -42,4 +42,3 @@ project([
 ## License
 
 MIT
-
