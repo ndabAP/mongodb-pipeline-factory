@@ -1,4 +1,4 @@
-import {Group} from '../../types/stages'
+import {Group} from '../../types'
 import each = require('lodash/each')
 import set = require('lodash/set')
 

@@ -1,45 +1,62 @@
 import { assert } from 'chai'
-import { and, or, gt, sum } from './../src/index'
+import { and, cond, gt, or, sum } from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
-    it('should return and array', () => assert.deepEqual(
+    it('should return array', () => assert.deepEqual(
       and([true, true, {}]),
       {$and: [true, true, {}]})
     )
   })
 
-  describe('Or', () => {
-    it('should return or array', () => assert.deepEqual(
-      or([true, true, {}]),
-      {$or: [true, true, {}]}
-    ))
+  describe('Cond', () => {
+    it('should return array', () => assert.deepEqual(
+      cond([true, 30, 20]),
+      {$cond: [true, 30, 20]})
+    )
+
+    it('should return array with object', () => assert.deepEqual(
+      cond([{}, 30, 20]),
+      {$cond: [{}, 30, 20]})
+    )
+
+    it('should return object', () => assert.deepEqual(
+      cond({}),
+      {$cond: {}})
+    )
   })
 
   describe('Gt', () => {
-    it('should return gt array', () => assert.deepEqual(
+    it('should return array', () => assert.deepEqual(
       gt(['quantity', 250]),
       {$gt: ['quantity', 250]}
     ))
 
-    it('should return gt number', () => assert.deepEqual(
+    it('should return number', () => assert.deepEqual(
       gt(250),
       {$gt: 250}
     ))
   })
 
+  describe('Or', () => {
+    it('should return array', () => assert.deepEqual(
+      or([true, true, {}]),
+      {$or: [true, true, {}]}
+    ))
+  })
+
   describe('Sum', () => {
-    it('should return sum string', () => assert.deepEqual(
+    it('should return string', () => assert.deepEqual(
       sum('$score'),
       {$sum: '$score'}
     ))
 
-    it('should return sum array', () => assert.deepEqual(
+    it('should return array', () => assert.deepEqual(
       sum(['$score', '$points']),
       {$sum: ['$score', '$points']}
     ))
 
-    it('should return sum number', () => assert.deepEqual(
+    it('should return number', () => assert.deepEqual(
       sum(1),
       {$sum: 1}
     ))

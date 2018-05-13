@@ -1,2 +1,2 @@
-export { group } from './stages/stages'
-export { and, or, gt, sum } from './operators/operators'
+export { group, project } from './stages/stages'
+export { and, cond, gt, or, sum } from './operators/operators'

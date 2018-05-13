@@ -1,6 +1,7 @@
 import and from './and'
-import or from './or'
+import cond from './cond'
 import gt from './gt'
+import or from './or'
 import sum from './sum'
 
-export { and, or, gt, sum }
+export { and, cond, gt, or, sum }
