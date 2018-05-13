@@ -11,6 +11,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "dev": "webpack --progress --colors --watch --env dev",
+    "docs": "./node_modules/.bin/typedoc --target ES6 --hideGenerator --out ./docs src/",
     "build": "webpack --env dev && webpack --env build",
     "test:watch": "mocha --require ts-node/register --watch-extensions ts,tsx -w 'test/**/*.{js,ts,tsx}'"
   },
@@ -29,6 +30,7 @@
     "mocha": "^5.1.1",
     "ts-node": "^6.0.3",
     "ts-loader": "^4.3.0",
+    "typedoc": "^0.11.1",
     "typescript": "^2.8.3",
     "webpack": "^4.8.1",
     "webpack-cli": "^2.1.3"
