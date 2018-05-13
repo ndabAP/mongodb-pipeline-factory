@@ -1,6 +1,6 @@
 {
   "name": "mongodb-pipeline-factory",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Generate MongoDB pipelines with ease. Save dozens of keystrokes.",
   "keywords": [
     "mongodb",
@@ -14,6 +14,10 @@
     "docs": "./node_modules/.bin/typedoc --target ES6 --hideGenerator --out ./docs src/",
     "build": "webpack --env dev && webpack --env build",
     "test:watch": "mocha --require ts-node/register --watch-extensions ts,tsx -w 'test/**/*.{js,ts,tsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndabAP/mongodb-pipeline-factory"
   },
   "author": "Julian Claus <kontakt@julian-claus.de>",
   "license": "MIT",
