@@ -1,4 +1,4 @@
-import {Filter} from '../../types/operators'
+import { Filter } from '../../types'
 
 /**
  * @param {Array<any>} input

@@ -1,4 +1,4 @@
-import { And } from '../../types/operators'
+import { And } from '../../types'
 
 /**
  * @param {Array<any>} expressions

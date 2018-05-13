@@ -1,4 +1,4 @@
-import {Map} from '../../types/operators'
+import { Map } from '../../types'
 
 /**
  * @param input

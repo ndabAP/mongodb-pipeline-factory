@@ -1,4 +1,4 @@
-import {Gt} from '../../types/operators'
+import { Gt } from '../../types'
 
 /**
  * @param {number | Array<any>} expressions

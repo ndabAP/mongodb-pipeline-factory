@@ -1,4 +1,4 @@
-import {Size} from '../../types/operators'
+import { Size } from '../../types'
 
 /**
  * @param expressions

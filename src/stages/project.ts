@@ -1,4 +1,4 @@
-import {Project} from '../../types/stages'
+import { Project } from '../../types'
 import each = require('lodash/each')
 import set = require('lodash/set')
 

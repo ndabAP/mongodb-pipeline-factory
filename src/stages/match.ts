@@ -1,4 +1,4 @@
-import {Match} from '../../types/stages'
+import { Match } from '../../types'
 
 /**
  * @param expressions

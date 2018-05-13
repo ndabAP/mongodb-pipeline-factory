@@ -1,4 +1,4 @@
-import {Sum} from '../../types'
+import { Sum } from '../../types'
 
 /**
  * @param {number | string | Array<any>} expressions

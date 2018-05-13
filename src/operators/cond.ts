@@ -1,4 +1,4 @@
-import {Cond} from '../../types/operators'
+import { Cond } from '../../types'
 
 /**
  * @param {[any] | Object} expressions
