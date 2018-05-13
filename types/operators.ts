@@ -4,8 +4,14 @@ interface And {
 interface Cond {
   (expressions: any): {$cond: any}
 }
+interface Filter {
+  (input: Array<any>, as: string, cond: any): {$filter: {input: any, as: string, cond: any}}
+}
 interface Gt {
   (expressions: number | Array<any>): {$gt: number | Array<any>}
+}
+interface Map {
+  (input: any, as: string, op: any): {$map: {input: any, as: string, in: any}}
 }
 interface Or {
   (expressions: Array<any>): {$or: any}
@@ -13,5 +19,8 @@ interface Or {
 interface Sum {
   (expressions: number | string | Array<any>): {$sum: number | string | Array<any>}
 }
+interface Size {
+  (expressions: any): {$size: any}
+}
 
-export { And, Cond, Gt, Or, Sum, }
+export { And, Cond, Filter, Gt, Map, Or, Size, Sum }

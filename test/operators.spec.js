@@ -1,9 +1,9 @@
 import { assert } from 'chai'
-import { and, cond, gt, or, sum } from './../src/index'
+import { and, cond, filter, gt, map, or, size, sum } from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
-    it('should return array', () => assert.deepEqual(
+    it('should return array with object', () => assert.deepEqual(
       and([true, true, {}]),
       {$and: [true, true, {}]})
     )
@@ -26,6 +26,13 @@ describe('Operators', () => {
     )
   })
 
+  describe('Filter', () => {
+    it('should return array, string and object', () => assert.deepEqual(
+      filter([1, 2, 3], 'number', {}),
+      {$filter: {input: [1, 2, 3], as: 'number', cond: {}}}
+    ))
+  })
+
   describe('Gt', () => {
     it('should return array', () => assert.deepEqual(
       gt(['quantity', 250]),
@@ -38,10 +45,29 @@ describe('Operators', () => {
     ))
   })
 
+  describe('map', () => {
+    it('should return string, string, object', () => assert.deepEqual(
+      map('$scores', 'score', {}),
+      {$map: {input: '$scores', as: 'score', in: {}}}
+    ))
+  })
+
   describe('Or', () => {
-    it('should return array', () => assert.deepEqual(
+    it('should return array with object', () => assert.deepEqual(
       or([true, true, {}]),
       {$or: [true, true, {}]}
+    ))
+  })
+
+  describe('Size', () => {
+    it('should return string', () => assert.deepEqual(
+      size('$colors'),
+      {$size: '$colors'}
+    ))
+
+    it('should return object', () => assert.deepEqual(
+      size({}),
+      {$size: {}}
     ))
   })
 

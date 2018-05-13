@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { group, project } from './../src/index'
+import { group, match, project } from './../src/index'
 
 describe('Stages', () => {
   describe('group', () => {
@@ -7,6 +7,15 @@ describe('Stages', () => {
       assert.deepEqual(
         group('$title', [['total', {}]]),
         {'$group': {_id: '$title', total: {}}}
+      )
+    })
+  })
+
+  describe('match', () => {
+    it('should return object', () => {
+      assert.deepEqual(
+        match({author: 'Dave'}),
+        {$match: {author: 'Dave'}}
       )
     })
   })
