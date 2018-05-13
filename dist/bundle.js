@@ -1013,7 +1013,7 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.group = stages_1.group;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.or = operators_1.or;\nexports.gt = operators_1.gt;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.group = stages_1.group;\nexports.project = stages_1.project;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.cond = operators_1.cond;\nexports.gt = operators_1.gt;\nexports.or = operators_1.or;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
@@ -1026,6 +1026,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar st
 
 "use strict";
 eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any>} expressions\n *\n * @returns {{$and: Array<any>}}\n */\nvar fn = function (expressions) { return ({ $and: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
+
+/***/ }),
+
+/***/ "./src/operators/cond.ts":
+/*!*******************************!*\
+  !*** ./src/operators/cond.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {[any] | Object} expressions\n *\n * @returns {any}\n */\nvar fn = function (expressions) {\n    var cond = { $cond: null };\n    cond.$cond = expressions;\n    return cond;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/cond.ts?");
 
 /***/ }),
 
@@ -1049,7 +1061,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar sum_1 = __webpack_require__(/*! ./sum */ \"./src/operators/sum.ts\");\nexports.sum = sum_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar cond_1 = __webpack_require__(/*! ./cond */ \"./src/operators/cond.ts\");\nexports.cond = cond_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar sum_1 = __webpack_require__(/*! ./sum */ \"./src/operators/sum.ts\");\nexports.sum = sum_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
 
 /***/ }),
 
@@ -1089,6 +1101,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ea
 
 /***/ }),
 
+/***/ "./src/stages/project.ts":
+/*!*******************************!*\
+  !*** ./src/stages/project.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {Array<[string , any]>} expressions\n *\n * @returns {any}\n */\nvar fn = function (expressions) {\n    var project = { $project: {} };\n    each(expressions, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(project.$project, field, expression);\n    });\n    return project;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/project.ts?");
+
+/***/ }),
+
 /***/ "./src/stages/stages.ts":
 /*!******************************!*\
   !*** ./src/stages/stages.ts ***!
@@ -1097,7 +1121,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ea
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar group_1 = __webpack_require__(/*! ./group */ \"./src/stages/group.ts\");\nexports.group = group_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar group_1 = __webpack_require__(/*! ./group */ \"./src/stages/group.ts\");\nexports.group = group_1.default;\nvar project_1 = __webpack_require__(/*! ./project */ \"./src/stages/project.ts\");\nexports.project = project_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
 
 /***/ })
 
