@@ -4,7 +4,7 @@ import { and, cond, eq, filter, gt, map, not, or, size, sum } from './../src/ind
 describe('Operators', () => {
   describe('And', () => {
     it('should return array with object', () => assert.deepEqual(
-      and([true, true, {}]),
+      and(true, true, {}),
       {$and: [true, true, {}]})
     )
   })
@@ -73,7 +73,7 @@ describe('Operators', () => {
 
   describe('Or', () => {
     it('should return array with object', () => assert.deepEqual(
-      or([true, true, {}]),
+      or(true, true, {}),
       {$or: [true, true, {}]}
     ))
   })

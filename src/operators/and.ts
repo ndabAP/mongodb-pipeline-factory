@@ -1,10 +1,10 @@
 import { And } from '../../types'
 
 /**
- * @param {Array<any>} expressions
+ * @param expressions
  *
- * @returns {{$and: Array<any>}}
+ * @returns {{$and: any[]}}
  */
-const fn: And = (expressions: Array<any>) => ({$and: expressions})
+const fn: And = (...expressions: Array<any>) => ({$and: expressions})
 
 export default fn

@@ -1,5 +1,5 @@
 interface And {
-  (expressions: Array<any>): { $and: any }
+  (...expressions: Array<any>): { $and: any }
 }
 
 interface Cond {
@@ -27,7 +27,7 @@ interface Not {
 }
 
 interface Or {
-  (expressions: Array<any>): { $or: any }
+  (...expressions: Array<any>): { $or: any }
 }
 
 interface Sum {

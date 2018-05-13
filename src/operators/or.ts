@@ -1,10 +1,10 @@
 import { Or } from '../../types'
 
 /**
- * @param {Array<any>} expressions
+ * @param expressions
  *
- * @returns {{$or: Array<any>}}
+ * @returns {{$or: any[]}}
  */
-const fn: Or = (expressions: Array<any>) => ({$or: expressions})
+const fn: Or = (...expressions: Array<any>) => ({$or: expressions})
 
 export default fn
