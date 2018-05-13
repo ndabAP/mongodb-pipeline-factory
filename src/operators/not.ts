@@ -1,10 +1,10 @@
 import { Not } from '../../types'
 
 /**
- * @param {Array<any>} expressions
+ * @param {any} expressions
  *
- * @returns {{$not: Array<any>}}
+ * @returns {{$not: any}}
  */
-const fn: Not = (expressions: Array<any>) => ({$not: expressions})
+const fn: Not = (expressions: any) => ({$not: expressions})
 
 export default fn

@@ -1,8 +1,8 @@
 import { Eq } from '../../types'
 
 /**
- * @param x
- * @param y
+ * @param {any} x
+ * @param {any} y
  *
  * @returns {{$eq: (any)[]}}
  */

@@ -1,7 +1,7 @@
 import { Match } from '../../types'
 
 /**
- * @param expressions
+ * @param {any} expressions
  *
  * @returns {{$match: any}}
  */
