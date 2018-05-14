@@ -38,6 +38,11 @@ describe('Operators', () => {
       filter([1, 2, 3], 'number', {}),
       {$filter: {input: [1, 2, 3], as: 'number', cond: {}}}
     ))
+
+    it('should return string, string and object', () => assert.deepEqual(
+      filter('$items', 'item', {}),
+      {$filter: {input: '$items', as: 'item', cond: {}}}
+    ))
   })
 
   describe('Gt', () => {

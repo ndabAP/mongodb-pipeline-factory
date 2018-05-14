@@ -11,7 +11,8 @@ export interface Eq {
 }
 
 export interface Filter {
-  (input: Array<any>, as: string, cond: any): { $filter: { input: any, as: string, cond: any } }
+  (input: Array<any> | string, as: string, cond: any):
+    { $filter: { input: Array<any> | string, as: string, cond: any } }
 }
 
 export interface Gt {
