@@ -7,7 +7,7 @@ import { Gt } from '../../types'
  * @returns {any}
  */
 const fn: Gt = (x: string | number, y?: number) => {
-  if (y) {
+  if (typeof y !== 'undefined') {
     return {$gt: [x, y]}
   }
 

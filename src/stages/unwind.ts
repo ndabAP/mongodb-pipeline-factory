@@ -9,7 +9,7 @@ import { Unwind } from '../../types/stages'
  */
 const fn: Unwind = (path: string, includeArrayIndex?: string, preserveNullAndEmptyArrays?: boolean) => {
   let unwind: any = {$unwind: null}
-  if (includeArrayIndex && preserveNullAndEmptyArrays) {
+  if (includeArrayIndex && typeof preserveNullAndEmptyArrays !== 'undefined') {
     unwind.$unwind = {
       path,
       includeArrayIndex,

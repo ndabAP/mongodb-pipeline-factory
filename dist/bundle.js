@@ -1061,7 +1061,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any>} input\n * @param {string} as\n * @param cond\n * @returns {{$filter: {input: Array<any>; as: string; cond: any}}}\n */\nvar fn = function (input, as, cond) { return ({ $filter: { input: input, as: as, cond: cond } }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/filter.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any> | string} input\n * @param {string} as\n * @param cond\n *\n * @returns {{$filter: {input: Array<any> | string; as: string; cond: any}}}\n */\nvar fn = function (input, as, cond) { return ({ $filter: { input: input, as: as, cond: cond } }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/filter.ts?");
 
 /***/ }),
 
@@ -1073,7 +1073,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string | number} x\n * @param {number} y\n *\n * @returns {any}\n */\nvar fn = function (x, y) {\n    if (y) {\n        return { $gt: [x, y] };\n    }\n    return { $gt: x };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string | number} x\n * @param {number} y\n *\n * @returns {any}\n */\nvar fn = function (x, y) {\n    if (typeof y !== 'undefined') {\n        return { $gt: [x, y] };\n    }\n    return { $gt: x };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
 
 /***/ }),
 
@@ -1229,7 +1229,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar gr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string} path\n * @param {string} includeArrayIndex\n * @param {boolean} preserveNullAndEmptyArrays\n *\n * @returns {any}\n */\nvar fn = function (path, includeArrayIndex, preserveNullAndEmptyArrays) {\n    var unwind = { $unwind: null };\n    if (includeArrayIndex && preserveNullAndEmptyArrays) {\n        unwind.$unwind = {\n            path: path,\n            includeArrayIndex: includeArrayIndex,\n            preserveNullAndEmptyArrays: preserveNullAndEmptyArrays\n        };\n        return unwind;\n    }\n    unwind.$unwind = path;\n    return unwind;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/unwind.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string} path\n * @param {string} includeArrayIndex\n * @param {boolean} preserveNullAndEmptyArrays\n *\n * @returns {any}\n */\nvar fn = function (path, includeArrayIndex, preserveNullAndEmptyArrays) {\n    var unwind = { $unwind: null };\n    if (includeArrayIndex && typeof preserveNullAndEmptyArrays !== 'undefined') {\n        unwind.$unwind = {\n            path: path,\n            includeArrayIndex: includeArrayIndex,\n            preserveNullAndEmptyArrays: preserveNullAndEmptyArrays\n        };\n        return unwind;\n    }\n    unwind.$unwind = path;\n    return unwind;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/unwind.ts?");
 
 /***/ })
 
