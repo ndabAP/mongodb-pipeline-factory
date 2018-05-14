@@ -1,41 +1,39 @@
-interface And {
+export interface And {
   (...expressions: Array<any>): { $and: any }
 }
 
-interface Cond {
+export interface Cond {
   (expressions: any): { $cond: any }
 }
 
-interface Eq {
+export interface Eq {
   (x: any, y: any): { $eq: [any, any] }
 }
 
-interface Filter {
+export interface Filter {
   (input: Array<any>, as: string, cond: any): { $filter: { input: any, as: string, cond: any } }
 }
 
-interface Gt {
+export interface Gt {
   (x: string | number, y?: number): { $gt: any }
 }
 
-interface Map {
+export interface Map {
   (input: any, as: string, op: any): { $map: { input: any, as: string, in: any } }
 }
 
-interface Not {
+export interface Not {
   (expressions: any): { $not: any }
 }
 
-interface Or {
+export interface Or {
   (...expressions: Array<any>): { $or: any }
 }
 
-interface Sum {
+export interface Sum {
   (expressions: number | string | Array<any>): { $sum: number | string | Array<any> }
 }
 
-interface Size {
+export interface Size {
   (expressions: any): { $size: any }
 }
-
-export { And, Cond, Eq, Filter, Gt, Map, Not, Or, Size, Sum }
