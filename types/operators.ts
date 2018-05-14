@@ -15,7 +15,7 @@ interface Filter {
 }
 
 interface Gt {
-  (expressions: number | Array<any>): { $gt: number | Array<any> }
+  (x: string | number, y?: number): { $gt: any }
 }
 
 interface Map {

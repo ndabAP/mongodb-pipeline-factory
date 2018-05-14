@@ -1025,7 +1025,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar st
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any>} expressions\n *\n * @returns {{$and: Array<any>}}\n */\nvar fn = function (expressions) { return ({ $and: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expressions\n *\n * @returns {{$and: any[]}}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    return ({ $and: expressions });\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
 
 /***/ }),
 
@@ -1073,7 +1073,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {number | Array<any>} expressions\n *\n * @returns {{$gt: number | Array<any>}}\n */\nvar fn = function (expressions) { return ({ $gt: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string | number} x\n * @param {number} y\n *\n * @returns {any}\n */\nvar fn = function (x, y) {\n    if (y) {\n        return { $gt: [x, y] };\n    }\n    return { $gt: x };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/gt.ts?");
 
 /***/ }),
 
@@ -1121,7 +1121,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar an
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any>} expressions\n *\n * @returns {{$or: Array<any>}}\n */\nvar fn = function (expressions) { return ({ $or: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expressions\n *\n * @returns {{$or: any[]}}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    return ({ $or: expressions });\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
 
 /***/ }),
 

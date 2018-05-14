@@ -1,10 +1,17 @@
 import { Gt } from '../../types'
 
 /**
- * @param {number | Array<any>} expressions
+ * @param {string | number} x
+ * @param {number} y
  *
- * @returns {{$gt: number | Array<any>}}
+ * @returns {any}
  */
-const fn: Gt = (expressions: number | Array<any>) => ({$gt: expressions})
+const fn: Gt = (x: string | number, y?: number) => {
+  if (y) {
+    return {$gt: [x, y]}
+  }
+
+  return {$gt: x}
+}
 
 export default fn

@@ -42,7 +42,7 @@ describe('Operators', () => {
 
   describe('Gt', () => {
     it('should return array', () => assert.deepEqual(
-      gt(['quantity', 250]),
+      gt('quantity', 250),
       {$gt: ['quantity', 250]}
     ))
 
