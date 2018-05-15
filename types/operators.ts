@@ -2,6 +2,10 @@ export interface And {
   (...expressions: Array<any>): { $and: any }
 }
 
+export interface ArrayElemAt {
+  (array: any, idx: number): { $arrayElemAt: [any, number] }
+}
+
 export interface Cond {
   (expressions: any): { $cond: any }
 }

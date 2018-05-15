@@ -1,11 +1,23 @@
 import { assert } from 'chai'
-import { and, cond, eq, filter, gt, map, not, or, push, size, sum } from './../src/index'
+import { and, arrayElemAt, cond, eq, filter, gt, map, not, or, push, size, sum } from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
     it('should return array with object', () => assert.deepEqual(
       and(true, true, {}),
       {$and: [true, true, {}]})
+    )
+  })
+
+  describe('arrayElemAt', () => {
+    it('should return array with object and number', () => assert.deepEqual(
+      arrayElemAt({}, 1),
+      {$arrayElemAt: [{}, 1]})
+    )
+
+    it('should return array with array and number', () => assert.deepEqual(
+      arrayElemAt([], 1),
+      {$arrayElemAt: [[], 1]})
     )
   })
 
