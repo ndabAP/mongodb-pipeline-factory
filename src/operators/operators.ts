@@ -9,6 +9,7 @@ import not from './not'
 import or from './or'
 import push from './push'
 import size from './size'
+import substr from './substr'
 import sum from './sum'
 
-export { and, arrayElemAt, cond, eq, filter, gt, map, not, or, push, size, sum }
+export { and, arrayElemAt, cond, eq, filter, gt, map, not, or, push, size, substr, sum }

@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { and, arrayElemAt, cond, eq, filter, gt, map, not, or, push, size, sum } from './../src/index'
+import { and, arrayElemAt, cond, eq, filter, gt, map, not, or, push, size, substr, sum } from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
@@ -89,7 +89,7 @@ describe('Operators', () => {
   })
 
   describe('Or', () => {
-    it('should return array with object', () => assert.deepEqual(
+    it('should return array, true, true object', () => assert.deepEqual(
       or(true, true, {}),
       {$or: [true, true, {}]}
     ))
@@ -111,6 +111,18 @@ describe('Operators', () => {
     it('should return object', () => assert.deepEqual(
       size({}),
       {$size: {}}
+    ))
+  })
+
+  describe('Substr', () => {
+    it('should return array, object, number and number', () => assert.deepEqual(
+      substr({}, 1, 2),
+      {$substr: [{}, 1, 2]}
+    ))
+
+    it('should return array, string, number and number', () => assert.deepEqual(
+      substr('$quarter', 0, 2),
+      {$substr: ['$quarter', 0, 2]}
     ))
   })
 
