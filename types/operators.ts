@@ -31,6 +31,10 @@ export interface Or {
   (...expressions: Array<any>): { $or: any }
 }
 
+export interface Push {
+  (expression: any): { $push: any }
+}
+
 export interface Sum {
   (expressions: number | string | Array<any>): { $sum: number | string | Array<any> }
 }

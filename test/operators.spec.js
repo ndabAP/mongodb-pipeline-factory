@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { and, cond, eq, filter, gt, map, not, or, size, sum } from './../src/index'
+import { and, cond, eq, filter, gt, map, not, or, push, size, sum } from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
@@ -57,14 +57,14 @@ describe('Operators', () => {
     ))
   })
 
-  describe('map', () => {
+  describe('Map', () => {
     it('should return string, string, object', () => assert.deepEqual(
       map('$scores', 'score', {}),
       {$map: {input: '$scores', as: 'score', in: {}}}
     ))
   })
 
-  describe('not', () => {
+  describe('Not', () => {
     it('should return array', () => assert.deepEqual(
       not([true]),
       {$not: [true]}
@@ -80,6 +80,13 @@ describe('Operators', () => {
     it('should return array with object', () => assert.deepEqual(
       or(true, true, {}),
       {$or: [true, true, {}]}
+    ))
+  })
+
+  describe('Push', () => {
+    it('should return object', () => assert.deepEqual(
+      push({}),
+      {$push: {}}
     ))
   })
 
