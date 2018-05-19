@@ -19,7 +19,7 @@ $ npm install mongodb-pipeline-factory --save
 Import the stages or operators you need first.
 
 ```js
-import { cond, gt, project } from './../src/index'
+import { cond, gt, project } from 'mongodb-pipeline-factory'
 ```
 
 Now build your first pipeline.
