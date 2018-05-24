@@ -1,5 +1,6 @@
 import and from './and'
 import arrayElemAt from './arrayElemAt'
+import avg from './avg'
 import cond from './cond'
 import eq from './eq'
 import filter from './filter'
@@ -12,4 +13,4 @@ import size from './size'
 import substr from './substr'
 import sum from './sum'
 
-export { and, arrayElemAt, cond, eq, filter, gt, map, not, or, push, size, substr, sum }
+export { and, arrayElemAt, avg, cond, eq, filter, gt, map, not, or, push, size, substr, sum }

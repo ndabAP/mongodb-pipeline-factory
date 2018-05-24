@@ -6,6 +6,10 @@ export interface ArrayElemAt {
   (array: any, idx: number): { $arrayElemAt: [any, number] }
 }
 
+export interface Avg {
+    (expression: any): { $avg: any }
+}
+
 export interface Cond {
   (expressions: any): { $cond: any }
 }
