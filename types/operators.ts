@@ -24,7 +24,11 @@ export interface Filter {
 }
 
 export interface Gt {
-  (x: string | number, y?: number): { $gt: any }
+  (expression: any, y?: number): { $gt: any }
+}
+
+export interface Lt {
+  (expression: any, y?: number): { $lt: any }
 }
 
 export interface Map {

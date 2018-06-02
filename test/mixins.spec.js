@@ -11,14 +11,14 @@ describe('Mixins', () => {
 
   it('should return project with cond and gt', () => {
     assert.deepEqual(
-      project([
+      project(
         ['item', 1],
         ['discount', cond([
           gt(['$quantity', 250]),
           30,
           20
         ])]
-      ]),
+      ),
       {$project: {item: 1, discount: {$cond: [{$gt: ['$quantity', 250]}, 30, 20]}}}
     )
   })
