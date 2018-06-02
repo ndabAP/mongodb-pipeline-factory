@@ -1,12 +1,14 @@
 {
   "name": "mongodb-pipeline-factory",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Generate MongoDB pipelines with ease. Save dozens of keystrokes.",
   "keywords": [
     "mongodb",
-    "pipelines",
+    "pipeline",
     "node",
-    "mongoose"
+    "mongoose",
+    "generator",
+    "factory"
   ],
   "main": "dist/bundle.js",
   "scripts": {
