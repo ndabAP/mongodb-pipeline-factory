@@ -1,12 +1,12 @@
 import { Gt } from '../../types'
 
 /**
- * @param {string | number} x
+ * @param {any} x
  * @param {number} y
  *
  * @returns {any}
  */
-const fn: Gt = (x: string | number, y?: number) => {
+const fn: Gt = (x: any, y?: number) => {
   if (typeof y !== 'undefined') {
     return {$gt: [x, y]}
   }
