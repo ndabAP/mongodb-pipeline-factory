@@ -25,14 +25,14 @@ import { cond, gt, project } from 'mongodb-pipeline-factory'
 Now build your first pipeline.
 
 ```js
-project([
+project(
   ['item', 1],
   ['discount', cond([
     gt('$quantity', 250),
     30,
     20
   ])]
-])
+)
 ```
 
 ## Author

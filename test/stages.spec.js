@@ -32,7 +32,7 @@ describe('Stages', () => {
   describe('project', () => {
     it('should return object', () => {
       assert.deepEqual(
-        project([['title', 1], ['author', 0]]),
+        project(['title', 1], ['author', 0]),
         {$project: {'title': 1, 'author': 0}}
       )
     })

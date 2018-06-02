@@ -11,7 +11,7 @@ export interface Match {
 }
 
 export interface Project {
-  (expressions: [any, any, any] | Object): { $project: {} }
+  (...expressions: Array<[string, any]>[]): { $project: {} }
 }
 
 export interface Sample {
