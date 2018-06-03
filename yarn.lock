@@ -4608,8 +4608,8 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
 ts-loader@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.3.0.tgz#4e3ba172783d1256d3a23bdfadde011a795fae9e"
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.3.1.tgz#345298df9a5019be7a3e86cd7b8b1aefef4bbd79"
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
