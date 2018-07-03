@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { and, arrayElemAt,avg, cond, eq, filter, gt,lt, map, not, or, push, size, substr, sum ,} from './../src/index'
+import { and, arrayElemAt,avg, cond, eq, filter, gt, lt, map, ne, not, or, push, size, substr, sum ,} from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
@@ -97,6 +97,13 @@ describe('Operators', () => {
     it('should return object with string, string, object', () => assert.deepEqual(
       map('$scores', 'score', {}),
       {$map: {input: '$scores', as: 'score', in: {}}}
+    ))
+  })
+
+  describe('Ne', () => {
+    it('should return array with string, number', () => assert.deepEqual(
+      ne('score', 25),
+      {$ne: ['score', 25]}
     ))
   })
 

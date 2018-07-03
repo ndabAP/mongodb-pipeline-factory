@@ -7,6 +7,7 @@ export {
   eq,
   filter,
   map,
+  ne,
   not,
   gt,
   lt,

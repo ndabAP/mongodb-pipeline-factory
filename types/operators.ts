@@ -35,6 +35,10 @@ export interface Map {
   (input: any, as: string, op: any): { $map: { input: any, as: string, in: any } }
 }
 
+export interface Ne {
+    (x: any, y: any): { $ne: [any, any] }
+}
+
 export interface Not {
   (expressions: any): { $not: any }
 }

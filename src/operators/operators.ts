@@ -7,6 +7,7 @@ import filter from './filter'
 import gt from './gt'
 import lt from './lt'
 import map from './map'
+import ne from './ne'
 import not from './not'
 import or from './or'
 import push from './push'
@@ -14,4 +15,4 @@ import size from './size'
 import substr from './substr'
 import sum from './sum'
 
-export {and, arrayElemAt, avg, cond, eq, filter, gt, lt, map, not, or, push, size, substr, sum}
+export {and, arrayElemAt, avg, cond, eq, filter, gt, lt, map, ne, not, or, push, size, substr, sum}
