@@ -7,6 +7,7 @@ Generate MongoDB pipelines with ease. Save dozens of keystrokes.
 - Faster overviews
 - pipeline validation
 - lightweight library
+- 100 % test coverage
 
 ## Installation
 
