@@ -1,7 +1,14 @@
 import { assert } from 'chai'
-import { group, limit, match, project, sample, skip, sort, unwind } from './../src/index'
+import { count, group, limit, match, project, sample, skip, sort, unwind } from './../src/index'
 
 describe('Stages', () => {
+  describe('Count', () => {
+    it('should return string', () => assert.deepEqual(
+      count('score'),
+      {$count: 'score'}
+    ))
+  })
+
   describe('group', () => {
     it('should return object', () => {
       assert.deepEqual(

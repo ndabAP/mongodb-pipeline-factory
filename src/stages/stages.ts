@@ -1,3 +1,4 @@
+import count from './count'
 import group from './group'
 import limit from './limit'
 import match from './match'
@@ -7,4 +8,4 @@ import skip from './skip'
 import sort from './sort'
 import unwind from './unwind'
 
-export { group, limit, match, project, sample, skip, sort, unwind }
+export { count, group, limit, match, project, sample, skip, sort, unwind }

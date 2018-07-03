@@ -1,4 +1,4 @@
-export {group, limit, match, project, sample, skip, sort, unwind} from './stages/stages'
+export {count, group, limit, match, project, sample, skip, sort, unwind} from './stages/stages'
 export {
   and,
   arrayElemAt,

@@ -14,4 +14,4 @@ import size from './size'
 import substr from './substr'
 import sum from './sum'
 
-export { and, arrayElemAt, avg, cond, eq, filter, gt, lt, map, not, or, push, size, substr, sum }
+export {and, arrayElemAt, avg, cond, eq, filter, gt, lt, map, not, or, push, size, substr, sum}

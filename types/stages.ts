@@ -1,3 +1,7 @@
+export interface Count {
+    (count: string): { $count: string }
+}
+
 export interface Group {
   (_id: any, fields?: Array<[any, any]>): { $group: {} }
 }
