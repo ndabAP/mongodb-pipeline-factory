@@ -1,5 +1,23 @@
 import { assert } from 'chai'
-import { and, arrayElemAt,avg, cond, eq, filter, gt, lt, map, ne, not, or, push, size, substr, sum ,} from './../src/index'
+import {
+  and,
+  arrayElemAt,
+  avg,
+  cond,
+  eq,
+  filter,
+  gt,
+  inOperator,
+  lt,
+  map,
+  ne,
+  not,
+  or,
+  push,
+  size,
+  substr,
+  sum,
+} from './../src/index'
 
 describe('Operators', () => {
   describe('And', () => {
@@ -9,7 +27,7 @@ describe('Operators', () => {
     )
   })
 
-  describe('arrayElemAt', () => {
+  describe('ArrayElemAt', () => {
     it('should return array with object and number', () => assert.deepEqual(
       arrayElemAt({}, 1),
       {$arrayElemAt: [{}, 1]}),
@@ -21,7 +39,7 @@ describe('Operators', () => {
     )
   })
 
-  describe('avg', () => {
+  describe('Avg', () => {
     it('should return object', () => assert.deepEqual(
       avg({}),
       {$avg: {}}),
@@ -81,7 +99,14 @@ describe('Operators', () => {
     ))
   })
 
-  describe('lt', () => {
+  describe('In', () => {
+    it('should return array string, string', () => assert.deepEqual(
+      inOperator('quantity', '$products'),
+      {$in: ['quantity', '$products']}
+    ))
+  })
+
+  describe('Lt', () => {
     it('should return array', () => assert.deepEqual(
       lt('quantity', 250),
       {$lt: ['quantity', 250]}

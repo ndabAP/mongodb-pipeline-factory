@@ -9,7 +9,7 @@ describe('Stages', () => {
     ))
   })
 
-  describe('group', () => {
+  describe('Group', () => {
     it('should return object', () => {
       assert.deepEqual(
         group('$title', [['total', {}]]),
@@ -18,7 +18,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('limit', () => {
+  describe('Limit', () => {
     it('should return number', () => {
       assert.deepEqual(
         limit(5),
@@ -27,7 +27,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('match', () => {
+  describe('Match', () => {
     it('should return object', () => {
       assert.deepEqual(
         match({author: 'Dave'}),
@@ -36,7 +36,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('project', () => {
+  describe('Project', () => {
     it('should return object', () => {
       assert.deepEqual(
         project(['title', 1], ['author', 0]),
@@ -45,7 +45,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('sample', () => {
+  describe('Sample', () => {
     it('should return number', () => {
       assert.deepEqual(
         sample(1000),
@@ -54,7 +54,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('skip', () => {
+  describe('Skip', () => {
     it('should return number', () => {
       assert.deepEqual(
         skip(5),
@@ -79,7 +79,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('unwind', () => {
+  describe('Unwind', () => {
     it('should return unwind string', () => {
       assert.deepEqual(
         unwind('$sizes'),

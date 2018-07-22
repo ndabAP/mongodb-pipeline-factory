@@ -46,17 +46,32 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -1001,7 +1016,7 @@ eval("var baseToString = __webpack_require__(/*! ./_baseToString */ \"./node_mod
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\n\t\tmodule.deprecate = function() {};\r\n\t\tmodule.paths = [];\r\n\t\t// module.parent = undefined by default\r\n\t\tif (!module.children) module.children = [];\r\n\t\tObject.defineProperty(module, \"loaded\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.l;\r\n\t\t\t}\r\n\t\t});\r\n\t\tObject.defineProperty(module, \"id\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.i;\r\n\t\t\t}\r\n\t\t});\r\n\t\tmodule.webpackPolyfill = 1;\r\n\t}\r\n\treturn module;\r\n};\r\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/(webpack)/buildin/module.js?");
+eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\tmodule.deprecate = function() {};\n\t\tmodule.paths = [];\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/(webpack)/buildin/module.js?");
 
 /***/ }),
 
@@ -1013,7 +1028,7 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.count = stages_1.count;\nexports.group = stages_1.group;\nexports.limit = stages_1.limit;\nexports.match = stages_1.match;\nexports.project = stages_1.project;\nexports.sample = stages_1.sample;\nexports.skip = stages_1.skip;\nexports.sort = stages_1.sort;\nexports.unwind = stages_1.unwind;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.arrayElemAt = operators_1.arrayElemAt;\nexports.avg = operators_1.avg;\nexports.cond = operators_1.cond;\nexports.eq = operators_1.eq;\nexports.filter = operators_1.filter;\nexports.map = operators_1.map;\nexports.ne = operators_1.ne;\nexports.not = operators_1.not;\nexports.gt = operators_1.gt;\nexports.lt = operators_1.lt;\nexports.or = operators_1.or;\nexports.push = operators_1.push;\nexports.size = operators_1.size;\nexports.substr = operators_1.substr;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.count = stages_1.count;\nexports.group = stages_1.group;\nexports.limit = stages_1.limit;\nexports.match = stages_1.match;\nexports.project = stages_1.project;\nexports.sample = stages_1.sample;\nexports.skip = stages_1.skip;\nexports.sort = stages_1.sort;\nexports.unwind = stages_1.unwind;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.arrayElemAt = operators_1.arrayElemAt;\nexports.avg = operators_1.avg;\nexports.cond = operators_1.cond;\nexports.eq = operators_1.eq;\nexports.filter = operators_1.filter;\nexports.map = operators_1.map;\nexports.ne = operators_1.ne;\nexports.not = operators_1.not;\nexports.gt = operators_1.gt;\nexports.inOperator = operators_1.inOperator;\nexports.lt = operators_1.lt;\nexports.or = operators_1.or;\nexports.push = operators_1.push;\nexports.size = operators_1.size;\nexports.substr = operators_1.substr;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
@@ -1101,6 +1116,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 
 /***/ }),
 
+/***/ "./src/operators/inOperator.ts":
+/*!*************************************!*\
+  !*** ./src/operators/inOperator.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expression\n * @param array\n *\n * @returns {{$in: (any)[]}}\n */\nvar fn = function (expression, array) { return ({ $in: [expression, array] }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/inOperator.ts?");
+
+/***/ }),
+
 /***/ "./src/operators/lt.ts":
 /*!*****************************!*\
   !*** ./src/operators/lt.ts ***!
@@ -1157,7 +1184,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar arrayElemAt_1 = __webpack_require__(/*! ./arrayElemAt */ \"./src/operators/arrayElemAt.ts\");\nexports.arrayElemAt = arrayElemAt_1.default;\nvar avg_1 = __webpack_require__(/*! ./avg */ \"./src/operators/avg.ts\");\nexports.avg = avg_1.default;\nvar cond_1 = __webpack_require__(/*! ./cond */ \"./src/operators/cond.ts\");\nexports.cond = cond_1.default;\nvar eq_1 = __webpack_require__(/*! ./eq */ \"./src/operators/eq.ts\");\nexports.eq = eq_1.default;\nvar filter_1 = __webpack_require__(/*! ./filter */ \"./src/operators/filter.ts\");\nexports.filter = filter_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\nvar map_1 = __webpack_require__(/*! ./map */ \"./src/operators/map.ts\");\nexports.map = map_1.default;\nvar ne_1 = __webpack_require__(/*! ./ne */ \"./src/operators/ne.ts\");\nexports.ne = ne_1.default;\nvar not_1 = __webpack_require__(/*! ./not */ \"./src/operators/not.ts\");\nexports.not = not_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar push_1 = __webpack_require__(/*! ./push */ \"./src/operators/push.ts\");\nexports.push = push_1.default;\nvar size_1 = __webpack_require__(/*! ./size */ \"./src/operators/size.ts\");\nexports.size = size_1.default;\nvar substr_1 = __webpack_require__(/*! ./substr */ \"./src/operators/substr.ts\");\nexports.substr = substr_1.default;\nvar sum_1 = __webpack_require__(/*! ./sum */ \"./src/operators/sum.ts\");\nexports.sum = sum_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar and_1 = __webpack_require__(/*! ./and */ \"./src/operators/and.ts\");\nexports.and = and_1.default;\nvar arrayElemAt_1 = __webpack_require__(/*! ./arrayElemAt */ \"./src/operators/arrayElemAt.ts\");\nexports.arrayElemAt = arrayElemAt_1.default;\nvar avg_1 = __webpack_require__(/*! ./avg */ \"./src/operators/avg.ts\");\nexports.avg = avg_1.default;\nvar cond_1 = __webpack_require__(/*! ./cond */ \"./src/operators/cond.ts\");\nexports.cond = cond_1.default;\nvar eq_1 = __webpack_require__(/*! ./eq */ \"./src/operators/eq.ts\");\nexports.eq = eq_1.default;\nvar filter_1 = __webpack_require__(/*! ./filter */ \"./src/operators/filter.ts\");\nexports.filter = filter_1.default;\nvar gt_1 = __webpack_require__(/*! ./gt */ \"./src/operators/gt.ts\");\nexports.gt = gt_1.default;\nvar inOperator_1 = __webpack_require__(/*! ./inOperator */ \"./src/operators/inOperator.ts\");\nexports.inOperator = inOperator_1.default;\nvar lt_1 = __webpack_require__(/*! ./lt */ \"./src/operators/lt.ts\");\nexports.lt = lt_1.default;\nvar map_1 = __webpack_require__(/*! ./map */ \"./src/operators/map.ts\");\nexports.map = map_1.default;\nvar ne_1 = __webpack_require__(/*! ./ne */ \"./src/operators/ne.ts\");\nexports.ne = ne_1.default;\nvar not_1 = __webpack_require__(/*! ./not */ \"./src/operators/not.ts\");\nexports.not = not_1.default;\nvar or_1 = __webpack_require__(/*! ./or */ \"./src/operators/or.ts\");\nexports.or = or_1.default;\nvar push_1 = __webpack_require__(/*! ./push */ \"./src/operators/push.ts\");\nexports.push = push_1.default;\nvar size_1 = __webpack_require__(/*! ./size */ \"./src/operators/size.ts\");\nexports.size = size_1.default;\nvar substr_1 = __webpack_require__(/*! ./substr */ \"./src/operators/substr.ts\");\nexports.substr = substr_1.default;\nvar sum_1 = __webpack_require__(/*! ./sum */ \"./src/operators/sum.ts\");\nexports.sum = sum_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/operators.ts?");
 
 /***/ }),
 

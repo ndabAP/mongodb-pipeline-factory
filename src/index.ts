@@ -10,6 +10,7 @@ export {
   ne,
   not,
   gt,
+  inOperator,
   lt,
   or,
   push,
