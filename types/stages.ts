@@ -1,3 +1,7 @@
+export interface AddFields {
+    (...expressions: Array<[string, any]>[]): { $addFields: {} }
+}
+
 export interface Count {
     (count: string): { $count: string }
 }
