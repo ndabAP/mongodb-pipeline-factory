@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import { addFields, count, group, limit, match, project, sample, skip, sort, unwind } from './../src/index'
+import { addFields, count, group, limit, lookup, match, project, sample, skip, sort, unwind } from './../src/index'
 
 describe('Stages', () => {
   describe('AddFields', () => {
@@ -32,6 +32,15 @@ describe('Stages', () => {
       assert.deepEqual(
         limit(5),
         {$limit: 5}
+      )
+    })
+  })
+
+  describe('Lookup', () => {
+    it('should return object with strings', () => {
+      assert.deepEqual(
+        lookup('inventory', 'item', 'sku', 'inventoryDocuments'),
+        {$lookup: {from: 'inventory', localField: 'item', foreignField: 'sku', as: 'inventoryDocuments'}}
       )
     })
   })

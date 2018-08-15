@@ -7,23 +7,34 @@ export interface Count {
 }
 
 export interface Group {
-  (_id: any, fields?: Array<[any, any]>): { $group: {} }
+    (_id: any, fields?: Array<[any, any]>): { $group: {} }
 }
 
 export interface Limit {
     (limit: number): { $limit: number }
 }
 
+export interface Lookup {
+    (from: string, localField: string, foreignField: string, as: string): {
+        $lookup: {
+            from: string,
+            localField: string,
+            foreignField: string,
+            as: string
+        }
+    }
+}
+
 export interface Match {
-  (expressions: any): { $match: {} }
+    (expressions: any): { $match: {} }
 }
 
 export interface Project {
-  (...expressions: Array<[string, any]>[]): { $project: {} }
+    (...expressions: Array<[string, any]>[]): { $project: {} }
 }
 
 export interface Sample {
-  (size: number): { $sample: { size: number } }
+    (size: number): { $sample: { size: number } }
 }
 
 export interface Skip {
@@ -31,10 +42,10 @@ export interface Skip {
 }
 
 export interface Sort {
-  (expressions: Array<[string, any]>): { $sort: {} }
+    (expressions: Array<[string, any]>): { $sort: {} }
 }
 
 export interface Unwind {
-  (path: string, includeArrayIndex?: string, preserveNullAndEmptyArrays?: boolean):
-    { $unwind: string | { path: string, includeArrayIndex: string, preserveNullAndEmptyArrays: boolean } }
+    (path: string, includeArrayIndex?: string, preserveNullAndEmptyArrays?: boolean):
+        { $unwind: string | { path: string, includeArrayIndex: string, preserveNullAndEmptyArrays: boolean } }
 }
