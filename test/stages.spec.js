@@ -1,7 +1,16 @@
 import { assert } from 'chai'
-import { count, group, limit, match, project, sample, skip, sort, unwind } from './../src/index'
+import { addFields, count, group, limit, lookup, match, project, sample, skip, sort, unwind } from './../src/index'
 
 describe('Stages', () => {
+  describe('AddFields', () => {
+    it('should return object with string and object', () => {
+      assert.deepEqual(
+        addFields(['title', {}], ['author', {}]),
+        {$addFields: {'title': {}, 'author': {}}}
+      )
+    })
+  })
+
   describe('Count', () => {
     it('should return string', () => assert.deepEqual(
       count('score'),
@@ -23,6 +32,15 @@ describe('Stages', () => {
       assert.deepEqual(
         limit(5),
         {$limit: 5}
+      )
+    })
+  })
+
+  describe('Lookup', () => {
+    it('should return object with strings', () => {
+      assert.deepEqual(
+        lookup('inventory', 'item', 'sku', 'inventoryDocuments'),
+        {$lookup: {from: 'inventory', localField: 'item', foreignField: 'sku', as: 'inventoryDocuments'}}
       )
     })
   })
@@ -63,7 +81,7 @@ describe('Stages', () => {
     })
   })
 
-  describe('sort', () => {
+  describe('Sort', () => {
     it('should return object', () => {
       assert.deepEqual(
         sort([['age', -1], ['posts', 1]]),

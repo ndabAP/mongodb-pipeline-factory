@@ -1028,7 +1028,7 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.count = stages_1.count;\nexports.group = stages_1.group;\nexports.limit = stages_1.limit;\nexports.match = stages_1.match;\nexports.project = stages_1.project;\nexports.sample = stages_1.sample;\nexports.skip = stages_1.skip;\nexports.sort = stages_1.sort;\nexports.unwind = stages_1.unwind;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.arrayElemAt = operators_1.arrayElemAt;\nexports.avg = operators_1.avg;\nexports.cond = operators_1.cond;\nexports.eq = operators_1.eq;\nexports.filter = operators_1.filter;\nexports.map = operators_1.map;\nexports.ne = operators_1.ne;\nexports.not = operators_1.not;\nexports.gt = operators_1.gt;\nexports.inOperator = operators_1.inOperator;\nexports.lt = operators_1.lt;\nexports.or = operators_1.or;\nexports.push = operators_1.push;\nexports.size = operators_1.size;\nexports.substr = operators_1.substr;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar stages_1 = __webpack_require__(/*! ./stages/stages */ \"./src/stages/stages.ts\");\nexports.addFields = stages_1.addFields;\nexports.count = stages_1.count;\nexports.group = stages_1.group;\nexports.limit = stages_1.limit;\nexports.lookup = stages_1.lookup;\nexports.match = stages_1.match;\nexports.project = stages_1.project;\nexports.sample = stages_1.sample;\nexports.skip = stages_1.skip;\nexports.sort = stages_1.sort;\nexports.unwind = stages_1.unwind;\nvar operators_1 = __webpack_require__(/*! ./operators/operators */ \"./src/operators/operators.ts\");\nexports.and = operators_1.and;\nexports.arrayElemAt = operators_1.arrayElemAt;\nexports.avg = operators_1.avg;\nexports.cond = operators_1.cond;\nexports.eq = operators_1.eq;\nexports.filter = operators_1.filter;\nexports.map = operators_1.map;\nexports.ne = operators_1.ne;\nexports.not = operators_1.not;\nexports.gt = operators_1.gt;\nexports.inOperator = operators_1.inOperator;\nexports.lt = operators_1.lt;\nexports.or = operators_1.or;\nexports.push = operators_1.push;\nexports.size = operators_1.size;\nexports.substr = operators_1.substr;\nexports.sum = operators_1.sum;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/index.ts?");
 
 /***/ }),
 
@@ -1248,6 +1248,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 
 /***/ }),
 
+/***/ "./src/stages/addFields.ts":
+/*!*********************************!*\
+  !*** ./src/stages/addFields.ts ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {...([string , any])} expressions\n *\n * @returns {any}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    var addFields = { $addFields: {} };\n    each(expressions, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(addFields.$addFields, field, expression);\n    });\n    return addFields;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/addFields.ts?");
+
+/***/ }),
+
 /***/ "./src/stages/count.ts":
 /*!*****************************!*\
   !*** ./src/stages/count.ts ***!
@@ -1281,6 +1293,18 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ea
 
 "use strict";
 eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {number} limit\n *\n * @returns {{$limit: number}}\n */\nvar fn = function (limit) { return ({ $limit: limit }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/limit.ts?");
+
+/***/ }),
+
+/***/ "./src/stages/lookup.ts":
+/*!******************************!*\
+  !*** ./src/stages/lookup.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar fn = function (from, localField, foreignField, as) {\n    return {\n        $lookup: {\n            from: from, localField: localField, foreignField: foreignField, as: as\n        }\n    };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/lookup.ts?");
 
 /***/ }),
 
@@ -1352,7 +1376,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ea
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar count_1 = __webpack_require__(/*! ./count */ \"./src/stages/count.ts\");\nexports.count = count_1.default;\nvar group_1 = __webpack_require__(/*! ./group */ \"./src/stages/group.ts\");\nexports.group = group_1.default;\nvar limit_1 = __webpack_require__(/*! ./limit */ \"./src/stages/limit.ts\");\nexports.limit = limit_1.default;\nvar match_1 = __webpack_require__(/*! ./match */ \"./src/stages/match.ts\");\nexports.match = match_1.default;\nvar project_1 = __webpack_require__(/*! ./project */ \"./src/stages/project.ts\");\nexports.project = project_1.default;\nvar sample_1 = __webpack_require__(/*! ./sample */ \"./src/stages/sample.ts\");\nexports.sample = sample_1.default;\nvar skip_1 = __webpack_require__(/*! ./skip */ \"./src/stages/skip.ts\");\nexports.skip = skip_1.default;\nvar sort_1 = __webpack_require__(/*! ./sort */ \"./src/stages/sort.ts\");\nexports.sort = sort_1.default;\nvar unwind_1 = __webpack_require__(/*! ./unwind */ \"./src/stages/unwind.ts\");\nexports.unwind = unwind_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar addFields_1 = __webpack_require__(/*! ./addFields */ \"./src/stages/addFields.ts\");\nexports.addFields = addFields_1.default;\nvar count_1 = __webpack_require__(/*! ./count */ \"./src/stages/count.ts\");\nexports.count = count_1.default;\nvar group_1 = __webpack_require__(/*! ./group */ \"./src/stages/group.ts\");\nexports.group = group_1.default;\nvar limit_1 = __webpack_require__(/*! ./limit */ \"./src/stages/limit.ts\");\nexports.limit = limit_1.default;\nvar lookup_1 = __webpack_require__(/*! ./lookup */ \"./src/stages/lookup.ts\");\nexports.lookup = lookup_1.default;\nvar match_1 = __webpack_require__(/*! ./match */ \"./src/stages/match.ts\");\nexports.match = match_1.default;\nvar project_1 = __webpack_require__(/*! ./project */ \"./src/stages/project.ts\");\nexports.project = project_1.default;\nvar sample_1 = __webpack_require__(/*! ./sample */ \"./src/stages/sample.ts\");\nexports.sample = sample_1.default;\nvar skip_1 = __webpack_require__(/*! ./skip */ \"./src/stages/skip.ts\");\nexports.skip = skip_1.default;\nvar sort_1 = __webpack_require__(/*! ./sort */ \"./src/stages/sort.ts\");\nexports.sort = sort_1.default;\nvar unwind_1 = __webpack_require__(/*! ./unwind */ \"./src/stages/unwind.ts\");\nexports.unwind = unwind_1.default;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/stages.ts?");
 
 /***/ }),
 
