@@ -42,7 +42,7 @@ export interface Skip {
 }
 
 export interface Sort {
-    (expressions: Array<[string, any]>): { $sort: {} }
+    (...expressions: Array<[string, any]>[]): { $sort: {} }
 }
 
 export interface Unwind {

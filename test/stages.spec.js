@@ -84,14 +84,14 @@ describe('Stages', () => {
   describe('Sort', () => {
     it('should return object', () => {
       assert.deepEqual(
-        sort([['age', -1], ['posts', 1]]),
+        sort(['age', -1], ['posts', 1]),
         {$sort: {age: -1, posts: 1}}
       )
     })
 
     it('should return object and nested object', () => {
       assert.deepEqual(
-        sort([['age', {}]]),
+        sort(['age', {}]),
         {$sort: {age: {}}}
       )
     })
