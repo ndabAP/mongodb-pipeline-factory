@@ -23,26 +23,26 @@ describe('Operators', () => {
   describe('And', () => {
     it('should return array with boolean, boolean, object', () => assert.deepEqual(
       and(true, true, {}),
-      {$and: [true, true, {}]}),
+      {$and: [true, true, {}]})
     )
   })
 
   describe('ArrayElemAt', () => {
     it('should return array with object and number', () => assert.deepEqual(
       arrayElemAt({}, 1),
-      {$arrayElemAt: [{}, 1]}),
+      {$arrayElemAt: [{}, 1]})
     )
 
     it('should return array with array and number', () => assert.deepEqual(
       arrayElemAt([], 1),
-      {$arrayElemAt: [[], 1]}),
+      {$arrayElemAt: [[], 1]})
     )
   })
 
   describe('Avg', () => {
     it('should return object', () => assert.deepEqual(
       avg({}),
-      {$avg: {}}),
+      {$avg: {}})
     )
 
     it('should return string', () => assert.deepEqual(
@@ -53,18 +53,13 @@ describe('Operators', () => {
 
   describe('Cond', () => {
     it('should return array with boolean, number, number', () => assert.deepEqual(
-      cond([true, 30, 20]),
+      cond(true, 30, 20),
       {$cond: [true, 30, 20]})
     )
 
     it('should return array with object, number, number', () => assert.deepEqual(
-      cond([{}, 30, 20]),
+      cond({}, 30, 20),
       {$cond: [{}, 30, 20]})
-    )
-
-    it('should return object', () => assert.deepEqual(
-      cond({}),
-      {$cond: {}})
     )
   })
 

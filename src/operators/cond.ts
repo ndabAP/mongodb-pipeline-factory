@@ -1,15 +1,12 @@
 import { Cond } from '../../types'
 
 /**
- * @param {[any] | Object} expressions
+ * @param {any} when
+ * @param {any} then
+ * @param {any} otherwise
  *
- * @returns {any}
+ * @returns {$cond: [when: any, then: any, otherwise: any]}
  */
-const fn: Cond = (expressions: [any, any, any] | Object) => {
-  let cond: any = {$cond: null}
-  cond.$cond = expressions
-
-  return cond
-}
+const fn: Cond = (when: any, then: any, otherwise: any) => ({$cond: [when, then, otherwise]})
 
 export default fn

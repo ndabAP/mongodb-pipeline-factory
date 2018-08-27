@@ -11,7 +11,7 @@ export interface Avg {
 }
 
 export interface Cond {
-  (expressions: any): { $cond: any }
+  (when: any, then: any, otherwise: any): { $cond: [any, any, any] }
 }
 
 export interface Eq {

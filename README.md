@@ -28,11 +28,11 @@ Now build your first pipeline.
 ```js
 project(
   ['item', 1],
-  ['discount', cond([
+  ['discount', cond(
     gt('$quantity', 250),
     30,
     20
-  ])]
+  )]
 )
 ```
 
