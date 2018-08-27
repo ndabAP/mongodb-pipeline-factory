@@ -1076,7 +1076,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {[any] | Object} expressions\n *\n * @returns {any}\n */\nvar fn = function (expressions) {\n    var cond = { $cond: null };\n    cond.$cond = expressions;\n    return cond;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/cond.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} when\n * @param {any} then\n * @param {any} otherwise\n *\n * @returns {$cond: [when: any, then: any, otherwise: any]}\n */\nvar fn = function (when, then, otherwise) { return ({ $cond: [when, then, otherwise] }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/cond.ts?");
 
 /***/ }),
 
