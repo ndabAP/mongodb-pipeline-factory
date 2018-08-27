@@ -1,6 +1,6 @@
 {
   "name": "mongodb-pipeline-factory",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "Generate MongoDB pipelines with ease. Save dozens of keystrokes.",
   "keywords": [
     "mongodb",
