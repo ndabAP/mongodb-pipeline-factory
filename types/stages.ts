@@ -49,7 +49,6 @@ export interface SortByCount {
     (expression: any): { $sortByCount: any }
 }
 
-
 export interface Unwind {
     (path: string, includeArrayIndex?: string, preserveNullAndEmptyArrays?: boolean):
         { $unwind: string | { path: string, includeArrayIndex: string, preserveNullAndEmptyArrays: boolean } }
