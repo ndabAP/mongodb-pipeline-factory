@@ -1,6 +1,7 @@
-import { Project } from '../../types'
 import each = require('lodash/each')
 import set = require('lodash/set')
+
+import { Project } from '../../types'
 
 /**
  * @param {...([string , any])} expressions

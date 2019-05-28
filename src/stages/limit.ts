@@ -1,4 +1,4 @@
-import { Limit } from "../../types"
+import { Limit } from '../../types'
 
 /**
  * @param {number} limit

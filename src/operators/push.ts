@@ -1,4 +1,4 @@
-import {Push} from '../../types/operators'
+import {Push} from '../../types'
 
 /**
  * @param expression

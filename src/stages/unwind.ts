@@ -1,4 +1,4 @@
-import { Unwind } from '../../types/stages'
+import { Unwind } from '../../types'
 
 /**
  * @param {string} path

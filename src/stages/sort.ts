@@ -1,6 +1,7 @@
-import {Sort} from '../../types'
 import each = require('lodash/each')
 import set = require('lodash/set')
+
+import {Sort} from '../../types'
 
 /**
  * @param {Array<[string, any]>[]} expressions
