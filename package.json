@@ -1,6 +1,6 @@
 {
   "name": "mongodb-pipeline-factory",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "Generate MongoDB pipelines with ease. Save dozens of keystrokes.",
   "keywords": [
     "mongodb",
@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "webpack --progress --colors --watch --env dev",
     "docs": "./node_modules/.bin/typedoc --target ES6 --hideGenerator --out ./docs src/",
-    "build": "webpack --env dev && webpack --env build",
+    "build": "webpack --env prod",
     "test": "mocha --require ts-node/register ts,tsx 'test/**/*.{js,ts,tsx}'",
     "test:watch": "mocha --require ts-node/register --watch-extensions ts,tsx -w 'test/**/*.{js,ts,tsx}'"
   },
@@ -34,6 +34,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "braces": "^2.3.1",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "ts-node": "^6.1.0",
