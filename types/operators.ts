@@ -28,7 +28,7 @@ export interface Gt {
 }
 
 export interface In {
-  (expression: any, array: any): { $in: [any, any] }
+  (expression: any, array?: any): { $in: [any, any?] }
 }
 
 export interface Lt {

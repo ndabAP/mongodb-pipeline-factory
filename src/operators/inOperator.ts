@@ -1,11 +1,17 @@
 import { In } from '../../types'
 
 /**
- * @param expression
- * @param array
+ * @param {any} expression
+ * @param {any} array
  *
  * @returns {{$in: (any)[]}}
  */
-const fn: In = (expression: any, array: any) => ({$in: [expression, array]})
+const fn: In = (expression: any, array?: any) => {
+  if (typeof array === 'undefined') {
+      return { $in: [expression] }
+  }
+
+  return { $in: [expression, array] }
+}
 
 export default fn
