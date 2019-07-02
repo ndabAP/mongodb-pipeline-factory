@@ -1,4 +1,4 @@
-import {Skip} from "../../types"
+import {Skip} from '../../types'
 
 /**
  * @param {number} skip

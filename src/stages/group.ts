@@ -1,6 +1,7 @@
-import { Group } from '../../types'
 import each = require('lodash/each')
 import set = require('lodash/set')
+
+import { Group } from '../../types'
 
 /**
  * @param {any} _id

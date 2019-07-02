@@ -1,4 +1,4 @@
-import {Avg} from "../../types/operators"
+import {Avg} from '../../types'
 
 /**
  * @param {any} expression

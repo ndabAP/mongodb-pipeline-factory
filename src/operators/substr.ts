@@ -1,4 +1,4 @@
-import {Substr} from '../../types/operators'
+import {Substr} from '../../types'
 
 /**
  * @param {any} expression

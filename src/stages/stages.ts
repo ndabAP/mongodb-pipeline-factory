@@ -8,6 +8,7 @@ import project from './project'
 import sample from './sample'
 import skip from './skip'
 import sort from './sort'
+import sortByCount from './sortByCount'
 import unwind from './unwind'
 
-export { addFields, count, group, limit, lookup, match, project, sample, skip, sort, unwind }
+export { addFields, count, group, limit, lookup, match, project, sample, skip, sort, sortByCount, unwind }

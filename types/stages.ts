@@ -26,11 +26,11 @@ export interface Lookup {
 }
 
 export interface Match {
-    (expressions: any): { $match: {} }
+    (expressions: any): { $match: any }
 }
 
 export interface Project {
-    (...expressions: Array<[string, any]>[]): { $project: {} }
+    (...expressions: Array<[string, any]>[]): { $project: any }
 }
 
 export interface Sample {
@@ -43,6 +43,10 @@ export interface Skip {
 
 export interface Sort {
     (...expressions: Array<[string, any]>[]): { $sort: {} }
+}
+
+export interface SortByCount {
+    (expression: any): { $sortByCount: any }
 }
 
 export interface Unwind {

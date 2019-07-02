@@ -1,5 +1,18 @@
 import { assert } from 'chai'
-import { addFields, count, group, limit, lookup, match, project, sample, skip, sort, unwind } from './../src/index'
+import {
+  addFields,
+  count,
+  group,
+  limit,
+  lookup,
+  match,
+  project,
+  sample,
+  skip,
+  sort,
+  sortByCount,
+  unwind
+} from './../src/index'
 
 describe('Stages', () => {
   describe('AddFields', () => {
@@ -93,6 +106,22 @@ describe('Stages', () => {
       assert.deepEqual(
         sort(['age', {}]),
         {$sort: {age: {}}}
+      )
+    })
+  })
+
+  describe('SortByCount', () => {
+    it('should return string', () => {
+      assert.deepEqual(
+        sortByCount('$tags'),
+        {$sortByCount: '$tags'}
+      )
+    })
+
+    it('should return object', () => {
+      assert.deepEqual(
+        sortByCount({}),
+        {$sortByCount: {}}
       )
     })
   })

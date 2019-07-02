@@ -1,4 +1,4 @@
-import {ArrayElemAt} from '../../types/operators'
+import {ArrayElemAt} from '../../types'
 
 /**
  * @param {any} array
