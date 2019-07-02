@@ -730,7 +730,7 @@ eval("var overArg = __webpack_require__(/*! ./_overArg */ \"./node_modules/lodas
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ \"./node_modules/lodash/_freeGlobal.js\");\n\n/** Detect free variable `exports`. */\nvar freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;\n\n/** Detect free variable `module`. */\nvar freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;\n\n/** Detect the popular CommonJS extension `module.exports`. */\nvar moduleExports = freeModule && freeModule.exports === freeExports;\n\n/** Detect free variable `process` from Node.js. */\nvar freeProcess = moduleExports && freeGlobal.process;\n\n/** Used to access faster Node.js helpers. */\nvar nodeUtil = (function() {\n  try {\n    // Use `util.types` for Node.js 10+.\n    var types = freeModule && freeModule.require && freeModule.require('util').types;\n\n    if (types) {\n      return types;\n    }\n\n    // Legacy `process.binding('util')` for Node.js < 10.\n    return freeProcess && freeProcess.binding && freeProcess.binding('util');\n  } catch (e) {}\n}());\n\nmodule.exports = nodeUtil;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./node_modules/lodash/_nodeUtil.js?");
+eval("/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ \"./node_modules/lodash/_freeGlobal.js\");\n\n/** Detect free variable `exports`. */\nvar freeExports =  true && exports && !exports.nodeType && exports;\n\n/** Detect free variable `module`. */\nvar freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;\n\n/** Detect the popular CommonJS extension `module.exports`. */\nvar moduleExports = freeModule && freeModule.exports === freeExports;\n\n/** Detect free variable `process` from Node.js. */\nvar freeProcess = moduleExports && freeGlobal.process;\n\n/** Used to access faster Node.js helpers. */\nvar nodeUtil = (function() {\n  try {\n    // Use `util.types` for Node.js 10+.\n    var types = freeModule && freeModule.require && freeModule.require('util').types;\n\n    if (types) {\n      return types;\n    }\n\n    // Legacy `process.binding('util')` for Node.js < 10.\n    return freeProcess && freeProcess.binding && freeProcess.binding('util');\n  } catch (e) {}\n}());\n\nmodule.exports = nodeUtil;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./node_modules/lodash/_nodeUtil.js?");
 
 /***/ }),
 
@@ -884,7 +884,7 @@ eval("var isFunction = __webpack_require__(/*! ./isFunction */ \"./node_modules/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(/*! ./_root */ \"./node_modules/lodash/_root.js\"),\n    stubFalse = __webpack_require__(/*! ./stubFalse */ \"./node_modules/lodash/stubFalse.js\");\n\n/** Detect free variable `exports`. */\nvar freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;\n\n/** Detect free variable `module`. */\nvar freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;\n\n/** Detect the popular CommonJS extension `module.exports`. */\nvar moduleExports = freeModule && freeModule.exports === freeExports;\n\n/** Built-in value references. */\nvar Buffer = moduleExports ? root.Buffer : undefined;\n\n/* Built-in method references for those with the same name as other `lodash` methods. */\nvar nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;\n\n/**\n * Checks if `value` is a buffer.\n *\n * @static\n * @memberOf _\n * @since 4.3.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.\n * @example\n *\n * _.isBuffer(new Buffer(2));\n * // => true\n *\n * _.isBuffer(new Uint8Array(2));\n * // => false\n */\nvar isBuffer = nativeIsBuffer || stubFalse;\n\nmodule.exports = isBuffer;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./node_modules/lodash/isBuffer.js?");
+eval("/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(/*! ./_root */ \"./node_modules/lodash/_root.js\"),\n    stubFalse = __webpack_require__(/*! ./stubFalse */ \"./node_modules/lodash/stubFalse.js\");\n\n/** Detect free variable `exports`. */\nvar freeExports =  true && exports && !exports.nodeType && exports;\n\n/** Detect free variable `module`. */\nvar freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;\n\n/** Detect the popular CommonJS extension `module.exports`. */\nvar moduleExports = freeModule && freeModule.exports === freeExports;\n\n/** Built-in value references. */\nvar Buffer = moduleExports ? root.Buffer : undefined;\n\n/* Built-in method references for those with the same name as other `lodash` methods. */\nvar nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;\n\n/**\n * Checks if `value` is a buffer.\n *\n * @static\n * @memberOf _\n * @since 4.3.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.\n * @example\n *\n * _.isBuffer(new Buffer(2));\n * // => true\n *\n * _.isBuffer(new Uint8Array(2));\n * // => false\n */\nvar isBuffer = nativeIsBuffer || stubFalse;\n\nmodule.exports = isBuffer;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./node_modules/lodash/isBuffer.js?");
 
 /***/ }),
 
@@ -1040,7 +1040,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar st
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expressions\n *\n * @returns {{$and: any[]}}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    return ({ $and: expressions });\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} expressions\n *\n * @returns {{$and: any[]}}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    return ({ $and: expressions });\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/and.ts?");
 
 /***/ }),
 
@@ -1064,7 +1064,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expression\n *\n * @returns {{$avg: any}}\n */\nvar fn = function (expression) { return ({ $avg: expression }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/avg.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} expression\n *\n * @returns {{$avg: any}}\n */\nvar fn = function (expression) { return ({ $avg: expression }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/avg.ts?");
 
 /***/ }),
 
@@ -1100,7 +1100,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any> | string} input\n * @param {string} as\n * @param cond\n *\n * @returns {{$filter: {input: Array<any> | string; as: string; cond: any}}}\n */\nvar fn = function (input, as, cond) { return ({ $filter: { input: input, as: as, cond: cond } }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/filter.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {Array<any> | string} input\n * @param {string} as\n * @param {any} cond\n *\n * @returns {{$filter: {input: Array<any> | string; as: string; cond: any}}}\n */\nvar fn = function (input, as, cond) { return ({ $filter: { input: input, as: as, cond: cond } }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/filter.ts?");
 
 /***/ }),
 
@@ -1124,7 +1124,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expression\n * @param array\n *\n * @returns {{$in: (any)[]}}\n */\nvar fn = function (expression, array) { return ({ $in: [expression, array] }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/inOperator.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} expression\n * @param {any} array\n *\n * @returns {{$in: [any, any?]}}\n */\nvar fn = function (expression, array) {\n    if (typeof array === 'undefined') {\n        return { $in: [expression] };\n    }\n    return { $in: [expression, array] };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/inOperator.ts?");
 
 /***/ }),
 
@@ -1148,7 +1148,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param input\n * @param {string} as\n * @param op\n *\n * @returns {{$map: {input: any; as: string; in: any}}}\n */\nvar fn = function (input, as, op) { return ({ $map: { input: input, as: as, in: op } }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/map.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} input\n * @param {string} as\n * @param {any} op\n *\n * @returns {{$map: {input: any; as: string; in: any}}}\n */\nvar fn = function (input, as, op) { return ({ $map: { input: input, as: as, in: op } }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/map.ts?");
 
 /***/ }),
 
@@ -1196,7 +1196,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar an
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expressions\n *\n * @returns {{$or: any[]}}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    return ({ $or: expressions });\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} expressions\n *\n * @returns {{$or: any[]}}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    return ({ $or: expressions });\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/or.ts?");
 
 /***/ }),
 
@@ -1208,7 +1208,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expression\n *\n * @returns {{$push: any}}\n */\nvar fn = function (expression) { return ({ $push: expression }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/push.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} expression\n *\n * @returns {{$push: any}}\n */\nvar fn = function (expression) { return ({ $push: expression }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/push.ts?");
 
 /***/ }),
 
@@ -1220,7 +1220,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param expressions\n *\n * @returns {{$size: any}}\n */\nvar fn = function (expressions) { return ({ $size: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/size.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {any} expressions\n *\n * @returns {{$size: any}}\n */\nvar fn = function (expressions) { return ({ $size: expressions }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/operators/size.ts?");
 
 /***/ }),
 
@@ -1268,7 +1268,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ea
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {String} count\n *\n * @returns {{$count: string}}\n */\nvar fn = function (count) { return ({ $count: count }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/count.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string} count\n *\n * @returns {{$count: string}}\n */\nvar fn = function (count) { return ({ $count: count }); };\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/count.ts?");
 
 /***/ }),
 
@@ -1280,7 +1280,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param _id\n * @param {Array<[any]>} fields\n *\n * @returns {any}\n */\nvar fn = function (_id, fields) {\n    var group = { $group: { _id: _id } };\n    each(fields, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(group.$group, field, expression);\n    });\n    return group;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/group.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {any} _id\n * @param {Array<[any]>} fields\n *\n * @returns {any}\n */\nvar fn = function (_id, fields) {\n    var group = { $group: { _id: _id } };\n    each(fields, function (_a) {\n        var field = _a[0], expression = _a[1];\n        return set(group.$group, field, expression);\n    });\n    return group;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/group.ts?");
 
 /***/ }),
 
@@ -1304,7 +1304,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar fn = function (from, localField, foreignField, as) {\n    return {\n        $lookup: {\n            from: from, localField: localField, foreignField: foreignField, as: as\n        }\n    };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/lookup.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * @param {string} from\n * @param {string} localField\n * @param {string} foreignField\n * @param {string} as\n *\n * @returns {{$lookup: {from: string, localField: string, foreignField: string, as: string}}}\n */\nvar fn = function (from, localField, foreignField, as) {\n    return {\n        $lookup: {\n            from: from, localField: localField, foreignField: foreignField, as: as\n        }\n    };\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/lookup.ts?");
 
 /***/ }),
 
@@ -1364,7 +1364,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {Array<[string, any]>} expressions\n *\n * @returns {any}\n */\nvar fn = function (expressions) {\n    var sort = { $sort: {} };\n    each(expressions, function (_a) {\n        var field = _a[0], order = _a[1];\n        return set(sort.$sort, field, order);\n    });\n    return sort;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/sort.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar each = __webpack_require__(/*! lodash/each */ \"./node_modules/lodash/each.js\");\nvar set = __webpack_require__(/*! lodash/set */ \"./node_modules/lodash/set.js\");\n/**\n * @param {Array<[string, any]>[]} expressions\n *\n * @returns {any}\n */\nvar fn = function () {\n    var expressions = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        expressions[_i] = arguments[_i];\n    }\n    var sort = { $sort: {} };\n    each(expressions, function (_a) {\n        var field = _a[0], order = _a[1];\n        return set(sort.$sort, field, order);\n    });\n    return sort;\n};\nexports.default = fn;\n\n\n//# sourceURL=webpack://mongodb-pipeline-factory/./src/stages/sort.ts?");
 
 /***/ }),
 

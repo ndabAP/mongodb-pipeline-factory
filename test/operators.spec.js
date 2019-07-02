@@ -95,9 +95,14 @@ describe('Operators', () => {
   })
 
   describe('In', () => {
-    it('should return array string, string', () => assert.deepEqual(
+    it('should return array with string, string', () => assert.deepEqual(
       inOperator('quantity', '$products'),
       {$in: ['quantity', '$products']}
+    ))
+
+    it('should return array with string', () => assert.deepEqual(
+      inOperator('quantity'),
+      {$in: ['quantity']}
     ))
   })
 
