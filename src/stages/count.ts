@@ -1,7 +1,7 @@
 import { Count } from '../../types'
 
 /**
- * @param {String} count
+ * @param {string} count
  *
  * @returns {{$count: string}}
  */

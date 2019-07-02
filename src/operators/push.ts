@@ -1,7 +1,7 @@
 import {Push} from '../../types/operators'
 
 /**
- * @param expression
+ * @param {any} expression
  *
  * @returns {{$push: any}}
  */

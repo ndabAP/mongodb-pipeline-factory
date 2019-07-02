@@ -1,7 +1,7 @@
 import { Size } from '../../types'
 
 /**
- * @param expressions
+ * @param {any} expressions
  *
  * @returns {{$size: any}}
  */

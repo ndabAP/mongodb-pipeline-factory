@@ -3,7 +3,7 @@ import each = require('lodash/each')
 import set = require('lodash/set')
 
 /**
- * @param _id
+ * @param {any} _id
  * @param {Array<[any]>} fields
  *
  * @returns {any}

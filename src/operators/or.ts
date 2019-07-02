@@ -1,7 +1,7 @@
 import { Or } from '../../types'
 
 /**
- * @param expressions
+ * @param {any} expressions
  *
  * @returns {{$or: any[]}}
  */

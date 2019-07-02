@@ -3,7 +3,7 @@ import { Filter } from '../../types'
 /**
  * @param {Array<any> | string} input
  * @param {string} as
- * @param cond
+ * @param {any} cond
  *
  * @returns {{$filter: {input: Array<any> | string; as: string; cond: any}}}
  */

@@ -1,7 +1,7 @@
 import { And } from '../../types'
 
 /**
- * @param expressions
+ * @param {any} expressions
  *
  * @returns {{$and: any[]}}
  */

@@ -1,9 +1,9 @@
 import { Map } from '../../types'
 
 /**
- * @param input
+ * @param {any} input
  * @param {string} as
- * @param op
+ * @param {any} op
  *
  * @returns {{$map: {input: any; as: string; in: any}}}
  */

@@ -1,7 +1,7 @@
 import {Avg} from "../../types/operators"
 
 /**
- * @param expression
+ * @param {any} expression
  *
  * @returns {{$avg: any}}
  */
