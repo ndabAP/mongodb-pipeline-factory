@@ -1,4 +1,4 @@
-# mongodb-pipeline-factory
+# NOT MAINTAINED mongodb-pipeline-factory
 
 Generate MongoDB pipelines with ease. Save dozens of keystrokes.
 
